@@ -1,10 +1,10 @@
-#include "sm_system_admin.h"
+#include "AdminCore\admin_mw.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	SM_System_Admin w;
+	Admin_MW w;
 	w.show();
 	return a.exec();
 }

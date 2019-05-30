@@ -28,28 +28,41 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Header Files\AdminCore">
+      <UniqueIdentifier>{c4a5737a-f37b-4be9-a9e5-6e17a964a647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AdminCore">
+      <UniqueIdentifier>{eb142bbd-99b1-4b0d-ae3d-a630af4e6c51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sm_system_admin.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="AdminCore\admin_mw.cpp">
+      <Filter>Source Files\AdminCore</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="sm_system_admin.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="sm_system_admin.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
+    <ClCompile Include="AdminCore\admin_login.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminCore\admin_main.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AdminCore\admin_mw.h">
+      <Filter>Header Files\AdminCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_login.h">
+      <Filter>Header Files\AdminCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_main.h">
+      <Filter>Header Files\AdminCore</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>
