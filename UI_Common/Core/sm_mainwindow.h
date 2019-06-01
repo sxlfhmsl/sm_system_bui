@@ -15,6 +15,13 @@ class UI_COMMON_EXPORT SM_MainWindow : public QMainWindow
 	Q_OBJECT
 
 public:
+	// 系统类型
+	enum System_Type {
+		Admin,              //管理员
+		Agent               //代理
+	};
+
+public:
 	SM_MainWindow(QString title = "", QWidget *parent = Q_NULLPTR);
 	~SM_MainWindow();
 
@@ -32,6 +39,8 @@ protected:
 	* @details 初始化主窗体，删除一些不需要的控件
 	*/
 	void init_MainWindow();
+	// 切换系统类型
+	void switch_System_Type(System_Type type);
 	// 初始化登录界面
 	virtual void create_Login() {};
 	// 初始化主界面

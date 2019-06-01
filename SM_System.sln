@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SM_System_Admin", "SM_Syste
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_Common", "UI_Common\UI_Common.vcxproj", "{D6982EF1-ED1B-4D97-A60B-DDA1C36921E0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SM_System_Agent", "SM_System_Agent\SM_System_Agent.vcxproj", "{17003679-A839-4795-A1F9-4E20F971690E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,6 +23,10 @@ Global
 		{D6982EF1-ED1B-4D97-A60B-DDA1C36921E0}.Debug|x86.Build.0 = Debug|Win32
 		{D6982EF1-ED1B-4D97-A60B-DDA1C36921E0}.Release|x86.ActiveCfg = Release|Win32
 		{D6982EF1-ED1B-4D97-A60B-DDA1C36921E0}.Release|x86.Build.0 = Release|Win32
+		{17003679-A839-4795-A1F9-4E20F971690E}.Debug|x86.ActiveCfg = Debug|Win32
+		{17003679-A839-4795-A1F9-4E20F971690E}.Debug|x86.Build.0 = Debug|Win32
+		{17003679-A839-4795-A1F9-4E20F971690E}.Release|x86.ActiveCfg = Release|Win32
+		{17003679-A839-4795-A1F9-4E20F971690E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

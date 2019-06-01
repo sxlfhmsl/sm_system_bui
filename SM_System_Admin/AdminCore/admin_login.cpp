@@ -2,7 +2,7 @@
 
 //股票后台 登录
 Admin_Login::Admin_Login(QWidget *parent)
-	: Widget_Login(parent)
+	: Widget_Login(Widget_Base::Admin, parent)
 {
 }
 

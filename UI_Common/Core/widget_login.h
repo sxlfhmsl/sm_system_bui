@@ -2,14 +2,14 @@
 
 #include "ui_common_global.h"
 
-#include <QWidget>
+#include "component\widget_base.h"
 namespace Ui { class Widget_Login; };
 
 /**
 * @brief The Widget_Login class
 * @details 登录界面
 */
-class UI_COMMON_EXPORT Widget_Login : public QWidget
+class UI_COMMON_EXPORT Widget_Login : public Widget_Base
 {
 	Q_OBJECT
 
@@ -20,7 +20,7 @@ signals :
 	void signal_LoginSuccess(QString);
 
 public:
-	Widget_Login(QWidget *parent = Q_NULLPTR);
+	Widget_Login(System_Type type, QWidget *parent = Q_NULLPTR);
 	~Widget_Login();
 
 protected:
@@ -29,6 +29,10 @@ protected:
 
 private:
 	Ui::Widget_Login *ui;
+
+private:
+	// 初始化窗口UI
+	void init_UI();
 
 private slots:
 	/**

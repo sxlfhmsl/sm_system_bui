@@ -2,7 +2,7 @@
 
 #include "ui_common_global.h"
 
-#include <QWidget>
+#include "component\widget_base.h"
 #include <QTreeWidgetItem>
 namespace Ui { class Widget_Main; };
 
@@ -10,12 +10,12 @@ namespace Ui { class Widget_Main; };
 * @brief The Widget_Main class
 * @details 主功能界面
 */
-class UI_COMMON_EXPORT Widget_Main : public QWidget
+class UI_COMMON_EXPORT Widget_Main : public Widget_Base
 {
 	Q_OBJECT
 
 public:
-	Widget_Main(QWidget *parent = Q_NULLPTR);
+	Widget_Main(System_Type type, QWidget *parent = Q_NULLPTR);
 	~Widget_Main();
 
 private:
@@ -27,7 +27,7 @@ private:
 	* @author 盛录
 	* @details 初始化当前窗口
 	*/
-	void init_Widget();
+	void init_UI();
 	
 	/**
 	* @brief switch_TabWidget

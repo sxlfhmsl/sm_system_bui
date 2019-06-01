@@ -11,8 +11,6 @@ SM_MainWindow::SM_MainWindow(QString title, QWidget *parent)
 	ui->setupUi(this);
 	// 设置标题
 	this->setWindowTitle(title);
-	// 初始化主界面
-	this->init_MainWindow();
 }
 
 SM_MainWindow::~SM_MainWindow()
@@ -89,3 +87,15 @@ void SM_MainWindow::slot_LogoutSuccess()
 	this->switch_WidgetLogin();
 }
 
+void SM_MainWindow::switch_System_Type(System_Type type)
+{
+	switch (type)
+	{
+	case SM_MainWindow::Admin:
+		break;
+	case SM_MainWindow::Agent:
+		break;
+	default:
+		break;
+	}
+}

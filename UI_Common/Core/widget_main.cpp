@@ -3,12 +3,12 @@
 
 #include <QMessageBox>
 
-Widget_Main::Widget_Main(QWidget *parent)
-	: QWidget(parent)
+Widget_Main::Widget_Main(System_Type type, QWidget *parent)
+	: Widget_Base(type, parent)
 {
 	ui = new Ui::Widget_Main();
 	ui->setupUi(this);
-	init_Widget();
+	this->init_UI();
 }
 
 Widget_Main::~Widget_Main()
@@ -30,7 +30,7 @@ void Widget_Main::on_treeWidget_Menu_itemClicked(QTreeWidgetItem* item, int colu
 	}
 }
 
-void Widget_Main::init_Widget()
+void Widget_Main::init_UI()
 {
 	// 初始化tabwidget，删除多余的
 	int count = ui->tabWidget_Content->count();
