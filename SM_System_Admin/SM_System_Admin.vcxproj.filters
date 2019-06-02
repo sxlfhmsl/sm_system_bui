@@ -72,6 +72,9 @@
     <ClCompile Include="AdminCore\Unique\admin_admin.cpp">
       <Filter>Source Files\AdminCore\Unique</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\admin_clerk.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -99,6 +102,9 @@
     </QtMoc>
     <QtMoc Include="AdminCore\Unique\admin_admin.h">
       <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_clerk.h">
+      <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

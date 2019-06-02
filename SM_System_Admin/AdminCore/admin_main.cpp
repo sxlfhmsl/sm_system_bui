@@ -1,5 +1,7 @@
 #include "admin_main.h"
 #include "AdminCore\admin_datasummary.h"
+#include "AdminCore\admin_clerk.h"
+
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
 #include "AdminCore\Unique\admin_admin.h"
@@ -30,6 +32,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_AgentAccount();
 		else if (tab_name == "管理员")
 			widget = new Admin_Admin();
+		else if (tab_name == "业务员")
+			widget = new Admin_Clerk();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}

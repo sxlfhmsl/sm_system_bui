@@ -2,8 +2,8 @@
 #include "ui_widget_clerk.h"
 
 // “业务员”界面
-Widget_Clerk::Widget_Clerk(QWidget *parent)
-	: Widget_Base(Widget_Base::Admin, parent)
+Widget_Clerk::Widget_Clerk(System_Type type, QWidget *parent)
+	: Widget_Base(type, parent)
 {
 	ui = new Ui::Widget_Clerk();
 	ui->setupUi(this);

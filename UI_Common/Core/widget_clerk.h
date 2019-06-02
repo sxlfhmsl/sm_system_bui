@@ -15,7 +15,7 @@ class UI_COMMON_EXPORT Widget_Clerk : public Widget_Base
 	Q_OBJECT
 
 public:
-	Widget_Clerk(QWidget *parent = Q_NULLPTR);
+	Widget_Clerk(System_Type type, QWidget *parent = Q_NULLPTR);
 	~Widget_Clerk();
 
 protected:
