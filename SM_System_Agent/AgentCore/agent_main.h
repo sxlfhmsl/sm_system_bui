@@ -13,4 +13,13 @@ class Agent_Main : public Widget_Main
 public:
 	Agent_Main(QWidget *parent = Q_NULLPTR);
 	~Agent_Main();
+
+protected:
+	/**
+	* @brief switch_TabWidget
+	* @author 盛录
+	* @return 如果新建界面返回true
+	* @details 切换并创建对应窗口
+	*/
+	bool switch_TabWidget(QString tab_name);
 };

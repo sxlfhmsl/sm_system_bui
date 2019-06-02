@@ -64,6 +64,9 @@
     <ClCompile Include="component\widget_base.cpp">
       <Filter>Source Files\component</Filter>
     </ClCompile>
+    <ClCompile Include="component\m_menu.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_common.h">
@@ -103,6 +106,9 @@
       <Filter>Header Files\component</Filter>
     </QtMoc>
     <QtMoc Include="component\widget_base.h">
+      <Filter>Header Files\component</Filter>
+    </QtMoc>
+    <QtMoc Include="component\m_menu.h">
       <Filter>Header Files\component</Filter>
     </QtMoc>
   </ItemGroup>

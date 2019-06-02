@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -30,6 +31,7 @@ class Ui_Widget_Main
 {
 public:
     QVBoxLayout *verticalLayout;
+    QSplitter *splitter_2;
     QFrame *frame_Status;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_Status_NameTitle;
@@ -38,6 +40,7 @@ public:
     QPushButton *pushButton_Logout;
     QFrame *frame_Content;
     QHBoxLayout *horizontalLayout;
+    QSplitter *splitter;
     QTreeWidget *treeWidget_Menu;
     QTabWidget *tabWidget_Content;
     QWidget *tab_3;
@@ -50,9 +53,12 @@ public:
             Widget_Main->setObjectName(QStringLiteral("Widget_Main"));
         Widget_Main->resize(1200, 900);
         verticalLayout = new QVBoxLayout(Widget_Main);
-        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        frame_Status = new QFrame(Widget_Main);
+        splitter_2 = new QSplitter(Widget_Main);
+        splitter_2->setObjectName(QStringLiteral("splitter_2"));
+        splitter_2->setOrientation(Qt::Vertical);
+        splitter_2->setHandleWidth(0);
+        frame_Status = new QFrame(splitter_2);
         frame_Status->setObjectName(QStringLiteral("frame_Status"));
         frame_Status->setMinimumSize(QSize(0, 40));
         frame_Status->setMaximumSize(QSize(16777215, 40));
@@ -79,25 +85,25 @@ public:
 
         horizontalLayout_2->addWidget(pushButton_Logout);
 
-
-        verticalLayout->addWidget(frame_Status);
-
-        frame_Content = new QFrame(Widget_Main);
+        splitter_2->addWidget(frame_Status);
+        frame_Content = new QFrame(splitter_2);
         frame_Content->setObjectName(QStringLiteral("frame_Content"));
         frame_Content->setFrameShape(QFrame::StyledPanel);
         frame_Content->setFrameShadow(QFrame::Raised);
         horizontalLayout = new QHBoxLayout(frame_Content);
-        horizontalLayout->setSpacing(0);
+        horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(-1, 0, 9, 0);
-        treeWidget_Menu = new QTreeWidget(frame_Content);
+        splitter = new QSplitter(frame_Content);
+        splitter->setObjectName(QStringLiteral("splitter"));
+        splitter->setOrientation(Qt::Horizontal);
+        splitter->setHandleWidth(0);
+        treeWidget_Menu = new QTreeWidget(splitter);
         treeWidget_Menu->setObjectName(QStringLiteral("treeWidget_Menu"));
         treeWidget_Menu->setMinimumSize(QSize(100, 0));
         treeWidget_Menu->setMaximumSize(QSize(200, 16777215));
-
-        horizontalLayout->addWidget(treeWidget_Menu);
-
-        tabWidget_Content = new QTabWidget(frame_Content);
+        treeWidget_Menu->setColumnCount(0);
+        splitter->addWidget(treeWidget_Menu);
+        tabWidget_Content = new QTabWidget(splitter);
         tabWidget_Content->setObjectName(QStringLiteral("tabWidget_Content"));
         tabWidget_Content->setTabsClosable(true);
         tabWidget_Content->setTabBarAutoHide(false);
@@ -107,20 +113,20 @@ public:
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
         tabWidget_Content->addTab(tab_4, QString());
+        splitter->addWidget(tabWidget_Content);
 
-        horizontalLayout->addWidget(tabWidget_Content);
+        horizontalLayout->addWidget(splitter);
 
-
-        verticalLayout->addWidget(frame_Content);
-
-        frame_Msg = new QFrame(Widget_Main);
+        splitter_2->addWidget(frame_Content);
+        frame_Msg = new QFrame(splitter_2);
         frame_Msg->setObjectName(QStringLiteral("frame_Msg"));
         frame_Msg->setMinimumSize(QSize(0, 40));
         frame_Msg->setMaximumSize(QSize(16777215, 40));
         frame_Msg->setFrameShape(QFrame::StyledPanel);
         frame_Msg->setFrameShadow(QFrame::Raised);
+        splitter_2->addWidget(frame_Msg);
 
-        verticalLayout->addWidget(frame_Msg);
+        verticalLayout->addWidget(splitter_2);
 
 
         retranslateUi(Widget_Main);
