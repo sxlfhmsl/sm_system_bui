@@ -1,27 +1,26 @@
 #pragma once
 
 #include "component\widget_base.h"
-
-namespace Ui { class Admin_MemberAccount; };
+namespace Ui { class Admin_AgentAccount; };
 
 /**
-* @brief The Widget_Vip_Account class
-* @details 会员账户界面
-*/
-class Admin_MemberAccount : public Widget_Base
+ * @brief The Widget_Agent_Account class
+ * @details “代理账户”界面
+ */
+class Admin_AgentAccount : public Widget_Base
 {
 	Q_OBJECT
 
 public:
-	Admin_MemberAccount(QWidget *parent = Q_NULLPTR);
-	~Admin_MemberAccount();
+	Admin_AgentAccount(QWidget *parent = Q_NULLPTR);
+	~Admin_AgentAccount();
 
 protected:
 	//设置headerlabels
 	void setHorizontalHeaderLabels(QStringList header);
 
 private:
-	Ui::Admin_MemberAccount *ui;
+	Ui::Admin_AgentAccount *ui;
 
 private:
 	/**

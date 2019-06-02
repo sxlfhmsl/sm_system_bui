@@ -1,6 +1,4 @@
 #pragma once
-
-#include <QWidget>
 #include <QLabel>
 
 #include "ui_common_global.h"

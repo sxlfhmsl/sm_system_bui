@@ -66,6 +66,12 @@
     <ClCompile Include="AdminCore\Unique\admin_memberaccount.cpp">
       <Filter>Source Files\AdminCore\Unique</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\Unique\admin_agentaccount.cpp">
+      <Filter>Source Files\AdminCore\Unique</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminCore\Unique\admin_admin.cpp">
+      <Filter>Source Files\AdminCore\Unique</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -88,9 +94,21 @@
     <QtMoc Include="AdminCore\Unique\admin_memberaccount.h">
       <Filter>Header Files\AdminCore\Unique</Filter>
     </QtMoc>
+    <QtMoc Include="AdminCore\Unique\admin_agentaccount.h">
+      <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\Unique\admin_admin.h">
+      <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminCore\Unique\admin_memberaccount.ui">
+      <Filter>Form Files\AdminCore\Unique</Filter>
+    </QtUic>
+    <QtUic Include="AdminCore\Unique\admin_agentaccount.ui">
+      <Filter>Form Files\AdminCore\Unique</Filter>
+    </QtUic>
+    <QtUic Include="AdminCore\Unique\admin_admin.ui">
       <Filter>Form Files\AdminCore\Unique</Filter>
     </QtUic>
   </ItemGroup>

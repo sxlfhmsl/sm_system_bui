@@ -1,31 +1,33 @@
 #pragma once
 
+#include "ui_common_global.h"
+
 #include "component\widget_base.h"
 
-namespace Ui { class Admin_MemberAccount; };
+namespace Ui { class Widget_Clerk; };
 
 /**
-* @brief The Widget_Vip_Account class
-* @details 会员账户界面
-*/
-class Admin_MemberAccount : public Widget_Base
+ * @brief The Widget_Clerk class
+ * @details “业务员”界面
+ */
+class UI_COMMON_EXPORT Widget_Clerk : public Widget_Base
 {
 	Q_OBJECT
 
 public:
-	Admin_MemberAccount(QWidget *parent = Q_NULLPTR);
-	~Admin_MemberAccount();
+	Widget_Clerk(QWidget *parent = Q_NULLPTR);
+	~Widget_Clerk();
 
 protected:
 	//设置headerlabels
 	void setHorizontalHeaderLabels(QStringList header);
 
 private:
-	Ui::Admin_MemberAccount *ui;
+	Ui::Widget_Clerk *ui;
 
 private:
 	/**
-	* @brief init_UI
+	* @brief init_Widget
 	* @author 盛录
 	* @details 初始化当前窗口
 	*/

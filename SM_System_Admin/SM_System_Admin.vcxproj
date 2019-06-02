@@ -118,7 +118,9 @@
     <ClCompile Include="AdminCore\admin_login.cpp" />
     <ClCompile Include="AdminCore\admin_main.cpp" />
     <ClCompile Include="AdminCore\admin_mw.cpp" />
+    <ClCompile Include="AdminCore\Unique\admin_admin.cpp" />
     <ClCompile Include="AdminCore\Unique\admin_memberaccount.cpp" />
+    <ClCompile Include="AdminCore\Unique\admin_agentaccount.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +159,21 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="AdminCore\Unique\admin_admin.ui" />
     <QtUic Include="AdminCore\Unique\admin_memberaccount.ui" />
+    <QtUic Include="AdminCore\Unique\admin_agentaccount.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AdminCore\Unique\admin_agentaccount.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AdminCore\Unique\admin_admin.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+    </QtMoc>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

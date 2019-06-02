@@ -79,6 +79,9 @@
     <ClCompile Include="component\widget_pagination.cpp">
       <Filter>Source Files\component</Filter>
     </ClCompile>
+    <ClCompile Include="Core\widget_clerk.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_common.h">
@@ -112,6 +115,9 @@
     <QtUic Include="component\widget_datagrid_pa.ui">
       <Filter>Form Files\component</Filter>
     </QtUic>
+    <QtUic Include="Core\widget_clerk.ui">
+      <Filter>Form Files\Core</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\sm_mainwindow.h">
@@ -140,6 +146,9 @@
     </QtMoc>
     <QtMoc Include="component\widget_datagrid_pa.h">
       <Filter>Header Files\component</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\widget_clerk.h">
+      <Filter>Header Files\Core</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
