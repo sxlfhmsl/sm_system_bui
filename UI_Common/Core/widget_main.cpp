@@ -97,3 +97,8 @@ void Widget_Main::init_Menu(const QList<M_Menu*> &menu)
 	}
 	ui->treeWidget_Menu->expandAll();
 }
+
+void Widget_Main::add_TabWidget(QString name, QWidget* widget)
+{
+	ui->tabWidget_Content->addTab(widget, name);
+}

@@ -4,6 +4,7 @@
 Admin_Login::Admin_Login(QWidget *parent)
 	: Widget_Login(Widget_Base::Admin, parent)
 {
+	this->setObjectName("Admin_Login");
 }
 
 Admin_Login::~Admin_Login()

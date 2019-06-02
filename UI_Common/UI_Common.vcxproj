@@ -118,6 +118,7 @@
     <ClCompile Include="component\vercodelabel.cpp" />
     <ClCompile Include="component\widget_base.cpp" />
     <ClCompile Include="Core\sm_mainwindow.cpp" />
+    <ClCompile Include="Core\widget_data_summary.cpp" />
     <ClCompile Include="Core\widget_login.cpp" />
     <ClCompile Include="Core\widget_main.cpp" />
     <ClCompile Include="ui_common.cpp" />
@@ -144,12 +145,17 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
     </QtMoc>
+    <QtMoc Include="Core\widget_data_summary.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
+    </QtMoc>
     <ClInclude Include="resource.h" />
     <ClInclude Include="ui_common.h" />
     <ClInclude Include="ui_common_global.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Core\sm_mainwindow.ui" />
+    <QtUic Include="Core\widget_data_summary.ui" />
     <QtUic Include="Core\widget_login.ui" />
     <QtUic Include="Core\widget_main.ui" />
   </ItemGroup>

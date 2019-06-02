@@ -48,6 +48,9 @@
     <ClCompile Include="AgentCore\agent_main.cpp">
       <Filter>Source Files\AgentCore</Filter>
     </ClCompile>
+    <ClCompile Include="AgentCore\agent_datasummary.cpp">
+      <Filter>Source Files\AgentCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_agent.qrc">
@@ -62,6 +65,9 @@
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
     <QtMoc Include="AgentCore\agent_main.h">
+      <Filter>Header Files\AgentCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AgentCore\agent_datasummary.h">
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
   </ItemGroup>

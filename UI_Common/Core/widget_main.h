@@ -42,6 +42,9 @@ protected:
 	*/
 	virtual bool switch_TabWidget(QString tab_name);
 
+	// 添加tab
+	void add_TabWidget(QString name, QWidget* widget);
+
 private:
 	Ui::Widget_Main *ui;
 

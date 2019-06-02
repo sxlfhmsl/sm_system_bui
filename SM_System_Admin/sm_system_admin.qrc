@@ -1,4 +1,7 @@
 <RCC>
-    <qresource prefix="SM_System_Admin">
+    <qresource prefix="/template">
+        <file>template/baseinfotemplate.html</file>
+        <file>template/summarytemplate.html</file>
+        <file>template/todaydatatemplate.html</file>
     </qresource>
 </RCC>
