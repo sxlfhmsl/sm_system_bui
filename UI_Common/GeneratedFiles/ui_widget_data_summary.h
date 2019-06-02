@@ -53,21 +53,21 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QFrame *frame_SummaryContent;
     QGridLayout *gridLayout_3;
-    QComboBox *comboBox;
-    QLabel *label_4;
     QLabel *label_6;
     QPushButton *pushButton_3;
-    QSpacerItem *horizontalSpacer_4;
-    QLabel *label_5;
+    QLabel *label_SummaryContent;
     QComboBox *comboBox_2;
     QComboBox *comboBox_3;
-    QLabel *label_SummaryContent;
+    QLabel *label_5;
+    QSpacerItem *horizontalSpacer_4;
     QFrame *frame;
     QHBoxLayout *horizontalLayout_4;
     QRadioButton *radioButton;
     QRadioButton *radioButton_2;
     QRadioButton *radioButton_3;
     QRadioButton *radioButton_4;
+    QComboBox *comboBox;
+    QLabel *label_4;
     QSpacerItem *verticalSpacer;
 
     void setupUi(QWidget *Widget_Data_Summary)
@@ -196,16 +196,6 @@ public:
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        comboBox = new QComboBox(frame_SummaryContent);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-
-        gridLayout_3->addWidget(comboBox, 0, 1, 1, 1);
-
-        label_4 = new QLabel(frame_SummaryContent);
-        label_4->setObjectName(QStringLiteral("label_4"));
-
-        gridLayout_3->addWidget(label_4, 0, 0, 1, 1);
-
         label_6 = new QLabel(frame_SummaryContent);
         label_6->setObjectName(QStringLiteral("label_6"));
 
@@ -216,14 +206,10 @@ public:
 
         gridLayout_3->addWidget(pushButton_3, 0, 6, 1, 1);
 
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        label_SummaryContent = new QLabel(frame_SummaryContent);
+        label_SummaryContent->setObjectName(QStringLiteral("label_SummaryContent"));
 
-        gridLayout_3->addItem(horizontalSpacer_4, 0, 7, 3, 1);
-
-        label_5 = new QLabel(frame_SummaryContent);
-        label_5->setObjectName(QStringLiteral("label_5"));
-
-        gridLayout_3->addWidget(label_5, 0, 2, 1, 1);
+        gridLayout_3->addWidget(label_SummaryContent, 3, 0, 1, 8);
 
         comboBox_2 = new QComboBox(frame_SummaryContent);
         comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
@@ -235,10 +221,14 @@ public:
 
         gridLayout_3->addWidget(comboBox_3, 0, 5, 1, 1);
 
-        label_SummaryContent = new QLabel(frame_SummaryContent);
-        label_SummaryContent->setObjectName(QStringLiteral("label_SummaryContent"));
+        label_5 = new QLabel(frame_SummaryContent);
+        label_5->setObjectName(QStringLiteral("label_5"));
 
-        gridLayout_3->addWidget(label_SummaryContent, 3, 0, 1, 8);
+        gridLayout_3->addWidget(label_5, 0, 2, 1, 1);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_3->addItem(horizontalSpacer_4, 0, 7, 3, 1);
 
         frame = new QFrame(frame_SummaryContent);
         frame->setObjectName(QStringLiteral("frame"));
@@ -272,6 +262,16 @@ public:
 
         gridLayout_3->addWidget(frame, 1, 0, 1, 6);
 
+        comboBox = new QComboBox(frame_SummaryContent);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+
+        gridLayout_3->addWidget(comboBox, 0, 1, 1, 1);
+
+        label_4 = new QLabel(frame_SummaryContent);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        gridLayout_3->addWidget(label_4, 0, 0, 1, 1);
+
 
         verticalLayout->addWidget(frame_SummaryContent);
 
@@ -295,14 +295,9 @@ public:
         pushButton_2->setText(QApplication::translate("Widget_Data_Summary", "\345\210\267\346\226\260", Q_NULLPTR));
         label_TodayDataContent->setText(QString());
         label_3->setText(QApplication::translate("Widget_Data_Summary", "\346\261\207\346\200\273\346\225\260\346\215\256", Q_NULLPTR));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-         << QApplication::translate("Widget_Data_Summary", "\345\205\250\351\203\250", Q_NULLPTR)
-        );
-        label_4->setText(QApplication::translate("Widget_Data_Summary", "\344\273\243\347\220\206\345\225\206\357\274\232", Q_NULLPTR));
         label_6->setText(QApplication::translate("Widget_Data_Summary", "\344\274\232\345\221\230\357\274\232", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("Widget_Data_Summary", "\346\237\245\350\257\242", Q_NULLPTR));
-        label_5->setText(QApplication::translate("Widget_Data_Summary", "\344\270\232\345\212\241\345\221\230\357\274\232", Q_NULLPTR));
+        label_SummaryContent->setText(QString());
         comboBox_2->clear();
         comboBox_2->insertItems(0, QStringList()
          << QApplication::translate("Widget_Data_Summary", "\345\205\250\351\203\250", Q_NULLPTR)
@@ -311,11 +306,16 @@ public:
         comboBox_3->insertItems(0, QStringList()
          << QApplication::translate("Widget_Data_Summary", "\345\205\250\351\203\250", Q_NULLPTR)
         );
-        label_SummaryContent->setText(QString());
+        label_5->setText(QApplication::translate("Widget_Data_Summary", "\344\270\232\345\212\241\345\221\230\357\274\232", Q_NULLPTR));
         radioButton->setText(QApplication::translate("Widget_Data_Summary", "\346\234\210", Q_NULLPTR));
         radioButton_2->setText(QApplication::translate("Widget_Data_Summary", "\345\221\250", Q_NULLPTR));
         radioButton_3->setText(QApplication::translate("Widget_Data_Summary", "\346\227\245", Q_NULLPTR));
         radioButton_4->setText(QApplication::translate("Widget_Data_Summary", "\350\207\252\345\256\232\344\271\211", Q_NULLPTR));
+        comboBox->clear();
+        comboBox->insertItems(0, QStringList()
+         << QApplication::translate("Widget_Data_Summary", "\345\205\250\351\203\250", Q_NULLPTR)
+        );
+        label_4->setText(QApplication::translate("Widget_Data_Summary", "\344\273\243\347\220\206\345\225\206\357\274\232", Q_NULLPTR));
     } // retranslateUi
 
 };

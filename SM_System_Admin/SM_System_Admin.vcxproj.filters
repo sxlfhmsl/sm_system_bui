@@ -34,6 +34,18 @@
     <Filter Include="Source Files\AdminCore">
       <UniqueIdentifier>{eb142bbd-99b1-4b0d-ae3d-a630af4e6c51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\AdminCore\Unique">
+      <UniqueIdentifier>{4c7fa0ed-5509-43f0-bb18-bbf35a8ac93d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AdminCore\Unique">
+      <UniqueIdentifier>{fb04b2de-49cb-4810-8cac-e5d3c6cfa4fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\AdminCore">
+      <UniqueIdentifier>{95d09f87-bbe4-4709-ac74-b443fe94d119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\AdminCore\Unique">
+      <UniqueIdentifier>{c911c1a3-5d7e-48e9-82ed-1781a76dadbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="AdminCore\admin_datasummary.cpp">
       <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminCore\Unique\admin_memberaccount.cpp">
+      <Filter>Source Files\AdminCore\Unique</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,5 +85,13 @@
     <QtMoc Include="AdminCore\admin_datasummary.h">
       <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
+    <QtMoc Include="AdminCore\Unique\admin_memberaccount.h">
+      <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="AdminCore\Unique\admin_memberaccount.ui">
+      <Filter>Form Files\AdminCore\Unique</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

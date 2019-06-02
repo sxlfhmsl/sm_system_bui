@@ -44,6 +44,9 @@
     <Filter Include="Header Files\component">
       <UniqueIdentifier>{5a85fb79-7806-468c-ad7e-abfaac941eea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Form Files\component">
+      <UniqueIdentifier>{d711d775-5afc-4708-9416-dd499b538179}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ui_common.cpp">
@@ -69,6 +72,12 @@
     </ClCompile>
     <ClCompile Include="Core\widget_data_summary.cpp">
       <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="component\widget_datagrid_pa.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="component\widget_pagination.cpp">
+      <Filter>Source Files\component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +106,12 @@
     <QtUic Include="Core\widget_data_summary.ui">
       <Filter>Form Files\Core</Filter>
     </QtUic>
+    <QtUic Include="component\widget_pagination.ui">
+      <Filter>Form Files\component</Filter>
+    </QtUic>
+    <QtUic Include="component\widget_datagrid_pa.ui">
+      <Filter>Form Files\component</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\sm_mainwindow.h">
@@ -119,6 +134,12 @@
     </QtMoc>
     <QtMoc Include="Core\widget_data_summary.h">
       <Filter>Header Files\Core</Filter>
+    </QtMoc>
+    <QtMoc Include="component\widget_pagination.h">
+      <Filter>Header Files\component</Filter>
+    </QtMoc>
+    <QtMoc Include="component\widget_datagrid_pa.h">
+      <Filter>Header Files\component</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

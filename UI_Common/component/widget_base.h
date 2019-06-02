@@ -2,11 +2,13 @@
 
 #include <QWidget>
 
+#include "ui_common_global.h"
+
 /**
  * @brief The Widget_Base class
  * @details 界面基类，主要用于存放可能用到的公共变量和方法
  */
-class Widget_Base : public QWidget
+class UI_COMMON_EXPORT Widget_Base : public QWidget
 {
 	Q_OBJECT
 
