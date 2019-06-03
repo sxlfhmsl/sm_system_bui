@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Widget_Member_DrawMoney</class>
- <widget class="QWidget" name="Widget_Member_DrawMoney">
+ <class>Widget_MemberDrawMoney</class>
+ <widget class="QWidget" name="Widget_MemberDrawMoney">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -115,7 +115,7 @@
   <customwidget>
    <class>Widget_DataGrid_Pa</class>
    <extends>QWidget</extends>
-   <header>corewidgets/widget_datagrid_pa.h</header>
+   <header>component/widget_datagrid_pa.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

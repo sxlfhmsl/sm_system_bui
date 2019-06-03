@@ -119,6 +119,7 @@
     <ClCompile Include="AdminCore\admin_fundsdetails.cpp" />
     <ClCompile Include="AdminCore\admin_login.cpp" />
     <ClCompile Include="AdminCore\admin_main.cpp" />
+    <ClCompile Include="AdminCore\admin_memberdrawmoney.cpp" />
     <ClCompile Include="AdminCore\admin_mw.cpp" />
     <ClCompile Include="AdminCore\admin_rechargemanage.cpp" />
     <ClCompile Include="AdminCore\admin_tradingbill.cpp" />
@@ -237,6 +238,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminCore\Unique\admin_agentdrawmoney.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AdminCore\admin_memberdrawmoney.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
     </QtMoc>

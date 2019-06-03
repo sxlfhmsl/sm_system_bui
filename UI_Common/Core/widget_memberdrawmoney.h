@@ -1,30 +1,37 @@
 #pragma once
 
-#include <QWidget>
-namespace Ui { class Widget_Member_DrawMoney; };
+#include "ui_common_global.h"
+
+#include "component\widget_base.h"
+
+namespace Ui { class Widget_MemberDrawMoney; };
 
 /**
-* @brief The Widget_Member_DrawMoney class
+* @brief The Widget_MemberDrawMoney class
 * @details “会员提款”界面
 */
-class Widget_Member_DrawMoney : public QWidget
+class UI_COMMON_EXPORT Widget_MemberDrawMoney : public Widget_Base
 {
 	Q_OBJECT
 
 public:
-	Widget_Member_DrawMoney(QWidget *parent = Q_NULLPTR);
-	~Widget_Member_DrawMoney();
+	Widget_MemberDrawMoney(System_Type type, QWidget *parent = Q_NULLPTR);
+	~Widget_MemberDrawMoney();
+
+protected:
+	//设置headerlabels
+	void setHorizontalHeaderLabels(QStringList header);
 
 private:
-	Ui::Widget_Member_DrawMoney *ui;
+	Ui::Widget_MemberDrawMoney *ui;
 
 private:
 	/**
-	* @brief init_Widget
+	* @brief init_UI
 	* @author 盛录
 	* @details 初始化当前窗口
 	*/
-	void init_Widget();
+	void init_UI();
 
 	/**
 	* @brief init_DataGrid
