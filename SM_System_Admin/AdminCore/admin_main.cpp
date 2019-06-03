@@ -5,6 +5,7 @@
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
 #include "AdminCore\Unique\admin_admin.h"
+#include "AdminCore\Unique\admin_logmanage.h"
 
 //股票后台 主要功能界面  -----管理端
 Admin_Main::Admin_Main(QWidget *parent)
@@ -34,6 +35,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_Admin();
 		else if (tab_name == "业务员")
 			widget = new Admin_Clerk();
+		else if (tab_name == "日志管理")
+			widget = new Admin_LogManage();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}

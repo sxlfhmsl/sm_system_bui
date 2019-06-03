@@ -51,7 +51,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -70,7 +70,7 @@
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <IncludePath>..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore;%(AdditionalIncludeDirectories)</IncludePath>
-      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
     </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
@@ -84,7 +84,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -102,7 +102,7 @@
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <IncludePath>..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore;%(AdditionalIncludeDirectories)</IncludePath>
-      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
     </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
@@ -122,6 +122,7 @@
     <ClCompile Include="AdminCore\Unique\admin_admin.cpp" />
     <ClCompile Include="AdminCore\Unique\admin_memberaccount.cpp" />
     <ClCompile Include="AdminCore\Unique\admin_agentaccount.cpp" />
+    <ClCompile Include="AdminCore\Unique\admin_logmanage.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <QtUic Include="AdminCore\Unique\admin_admin.ui" />
     <QtUic Include="AdminCore\Unique\admin_memberaccount.ui" />
     <QtUic Include="AdminCore\Unique\admin_agentaccount.ui" />
+    <QtUic Include="AdminCore\Unique\admin_logmanage.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminCore\Unique\admin_agentaccount.h">
@@ -178,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminCore\admin_clerk.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AdminCore\Unique\admin_logmanage.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
     </QtMoc>
