@@ -90,6 +90,9 @@
     <ClCompile Include="AdminCore\Unique\admin_mantrading.cpp">
       <Filter>Source Files\AdminCore\Unique</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\admin_fundsdetails.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -135,6 +138,9 @@
     </QtMoc>
     <QtMoc Include="AdminCore\Unique\admin_mantrading.h">
       <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_fundsdetails.h">
+      <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

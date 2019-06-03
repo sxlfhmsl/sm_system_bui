@@ -4,6 +4,7 @@
 #include "AdminCore\admin_userposition.h"
 #include "AdminCore\admin_usercloseposition.h"
 #include "AdminCore\admin_tradingbill.h"
+#include "AdminCore\admin_fundsdetails.h"
 
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
@@ -51,6 +52,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 		// 款项相关
 		else if (tab_name == "手动入/扣款")
 			widget = new Admin_ManTrading();
+		else if (tab_name == "资金明细")
+			widget = new Admin_FundsDetails();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}

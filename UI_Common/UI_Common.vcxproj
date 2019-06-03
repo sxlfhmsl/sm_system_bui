@@ -122,6 +122,7 @@
     <ClCompile Include="Core\sm_mainwindow.cpp" />
     <ClCompile Include="Core\widget_clerk.cpp" />
     <ClCompile Include="Core\widget_data_summary.cpp" />
+    <ClCompile Include="Core\widget_fundsdetails.cpp" />
     <ClCompile Include="Core\widget_login.cpp" />
     <ClCompile Include="Core\widget_main.cpp" />
     <ClCompile Include="Core\widget_tradingbill.cpp" />
@@ -179,6 +180,10 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
     </QtMoc>
+    <QtMoc Include="Core\widget_fundsdetails.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\component</IncludePath>
+    </QtMoc>
     <ClInclude Include="resource.h" />
     <ClInclude Include="ui_common.h" />
     <ClInclude Include="ui_common_global.h" />
@@ -189,6 +194,7 @@
     <QtUic Include="Core\sm_mainwindow.ui" />
     <QtUic Include="Core\widget_clerk.ui" />
     <QtUic Include="Core\widget_data_summary.ui" />
+    <QtUic Include="Core\widget_fundsdetails.ui" />
     <QtUic Include="Core\widget_login.ui" />
     <QtUic Include="Core\widget_main.ui" />
     <QtUic Include="Core\widget_tradingbill.ui" />
