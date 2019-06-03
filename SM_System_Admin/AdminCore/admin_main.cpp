@@ -9,6 +9,7 @@
 #include "AdminCore\admin_memberdrawmoney.h"
 #include "AdminCore\admin_noticemanage.h"
 #include "AdminCore\admin_closedarrange.h"
+#include "AdminCore\admin_tradingrules.h"
 
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
@@ -76,6 +77,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_StockManage();
 		else if (tab_name == "系统设置")
 			widget = new Admin_SystemSetting();
+		else if (tab_name == "交易规则")
+			widget = new Admin_TradingRules();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}

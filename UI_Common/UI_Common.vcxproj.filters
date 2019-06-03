@@ -106,6 +106,9 @@
     <ClCompile Include="Core\widget_closedarrange.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Core\widget_tradingrules.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_common.h">
@@ -166,6 +169,9 @@
     <QtUic Include="Core\widget_closedarrange.ui">
       <Filter>Form Files\Core</Filter>
     </QtUic>
+    <QtUic Include="Core\widget_tradingrules.ui">
+      <Filter>Form Files\Core</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\sm_mainwindow.h">
@@ -220,6 +226,9 @@
       <Filter>Header Files\Core</Filter>
     </QtMoc>
     <QtMoc Include="Core\widget_closedarrange.h">
+      <Filter>Header Files\Core</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\widget_tradingrules.h">
       <Filter>Header Files\Core</Filter>
     </QtMoc>
   </ItemGroup>

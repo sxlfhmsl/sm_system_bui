@@ -24,7 +24,9 @@ void Widget_Data_Summary::init_UI()
 		break;
 	case Widget_Base::Agent:
 		delete ui->label_4;
+		ui->label_4 = nullptr;
 		delete ui->comboBox;
+		ui->comboBox = nullptr;
 		break;
 	}
 }
