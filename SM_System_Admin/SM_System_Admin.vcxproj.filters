@@ -96,6 +96,9 @@
     <ClCompile Include="AdminCore\admin_rechargemanage.cpp">
       <Filter>Source Files\AdminCore</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\Unique\admin_agentdrawmoney.cpp">
+      <Filter>Source Files\AdminCore\Unique</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -148,6 +151,9 @@
     <QtMoc Include="AdminCore\admin_rechargemanage.h">
       <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
+    <QtMoc Include="AdminCore\Unique\admin_agentdrawmoney.h">
+      <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminCore\Unique\admin_memberaccount.ui">
@@ -163,6 +169,9 @@
       <Filter>Form Files\AdminCore\Unique</Filter>
     </QtUic>
     <QtUic Include="AdminCore\Unique\admin_mantrading.ui">
+      <Filter>Form Files\AdminCore\Unique</Filter>
+    </QtUic>
+    <QtUic Include="AdminCore\Unique\admin_agentdrawmoney.ui">
       <Filter>Form Files\AdminCore\Unique</Filter>
     </QtUic>
   </ItemGroup>

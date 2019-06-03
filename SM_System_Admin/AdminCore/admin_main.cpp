@@ -12,6 +12,7 @@
 #include "AdminCore\Unique\admin_admin.h"
 #include "AdminCore\Unique\admin_logmanage.h"
 #include "AdminCore\Unique\admin_mantrading.h"
+#include "AdminCore\Unique\admin_agentdrawmoney.h"
 
 //股票后台 主要功能界面  -----管理端
 Admin_Main::Admin_Main(QWidget *parent)
@@ -57,6 +58,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_FundsDetails();
 		else if (tab_name == "充值管理")
 			widget = new Admin_RechargeManage();
+		else if (tab_name == "代理提款")
+			widget = new Admint_AgentDrawMoney();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}
