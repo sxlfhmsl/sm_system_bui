@@ -78,6 +78,9 @@
     <ClCompile Include="AdminCore\Unique\admin_logmanage.cpp">
       <Filter>Source Files\AdminCore\Unique</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\admin_userposition.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -111,6 +114,9 @@
     </QtMoc>
     <QtMoc Include="AdminCore\Unique\admin_logmanage.h">
       <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_userposition.h">
+      <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

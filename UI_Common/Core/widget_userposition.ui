@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Widget_User_Position</class>
- <widget class="QWidget" name="Widget_User_Position">
+ <class>Widget_UserPosition</class>
+ <widget class="QWidget" name="Widget_UserPosition">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -31,7 +31,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QComboBox" name="comboBox_Agents">
+       <widget class="QComboBox" name="comboBox_Agent">
         <item>
          <property name="text">
           <string>全部</string>
@@ -63,14 +63,14 @@
        </widget>
       </item>
       <item row="0" column="5">
-       <widget class="QLabel" name="label_Vip">
+       <widget class="QLabel" name="label_Member">
         <property name="text">
          <string>会员：</string>
         </property>
        </widget>
       </item>
       <item row="0" column="6">
-       <widget class="QComboBox" name="comboBox_Vip">
+       <widget class="QComboBox" name="comboBox_Member">
         <item>
          <property name="text">
           <string>全部</string>
@@ -136,7 +136,7 @@
   <customwidget>
    <class>Widget_DataGrid_Pa</class>
    <extends>QWidget</extends>
-   <header>corewidgets/widget_datagrid_pa.h</header>
+   <header>component/widget_datagrid_pa.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
