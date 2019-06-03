@@ -93,6 +93,9 @@
     <ClCompile Include="AdminCore\admin_fundsdetails.cpp">
       <Filter>Source Files\AdminCore</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\admin_rechargemanage.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -140,6 +143,9 @@
       <Filter>Header Files\AdminCore\Unique</Filter>
     </QtMoc>
     <QtMoc Include="AdminCore\admin_fundsdetails.h">
+      <Filter>Header Files\AdminCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_rechargemanage.h">
       <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
   </ItemGroup>

@@ -5,6 +5,7 @@
 #include "AdminCore\admin_usercloseposition.h"
 #include "AdminCore\admin_tradingbill.h"
 #include "AdminCore\admin_fundsdetails.h"
+#include "AdminCore\admin_rechargemanage.h"
 
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
@@ -54,6 +55,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_ManTrading();
 		else if (tab_name == "资金明细")
 			widget = new Admin_FundsDetails();
+		else if (tab_name == "充值管理")
+			widget = new Admin_RechargeManage();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}
