@@ -9,6 +9,7 @@
 #include "AdminCore\Unique\admin_agentaccount.h"
 #include "AdminCore\Unique\admin_admin.h"
 #include "AdminCore\Unique\admin_logmanage.h"
+#include "AdminCore\Unique\admin_mantrading.h"
 
 //股票后台 主要功能界面  -----管理端
 Admin_Main::Admin_Main(QWidget *parent)
@@ -47,6 +48,9 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_UserClosePosition();
 		else if (tab_name == "交易账单")
 			widget = new Admin_TradingBill();
+		// 款项相关
+		else if (tab_name == "手动入/扣款")
+			widget = new Admin_ManTrading();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}
