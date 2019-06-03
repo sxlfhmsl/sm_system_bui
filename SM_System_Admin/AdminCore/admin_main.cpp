@@ -7,6 +7,7 @@
 #include "AdminCore\admin_fundsdetails.h"
 #include "AdminCore\admin_rechargemanage.h"
 #include "AdminCore\admin_memberdrawmoney.h"
+#include "AdminCore\admin_noticemanage.h"
 
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
@@ -63,6 +64,9 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admint_AgentDrawMoney();
 		else if (tab_name == "会员提款")
 			widget = new Admin_MemberDrawMoney();
+		// 其他功能
+		else if (tab_name == "公告管理")
+			widget = new Admin_NoticeManage();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}
