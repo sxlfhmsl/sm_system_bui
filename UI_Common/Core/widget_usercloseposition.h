@@ -4,26 +4,26 @@
 
 #include "component\widget_base.h"
 
-namespace Ui { class Widget_Clerk; };
+namespace Ui { class Widget_UserClosePosition; };
 
 /**
- * @brief The Widget_Clerk class
- * @details “业务员”界面
- */
-class UI_COMMON_EXPORT Widget_Clerk : public Widget_Base
+* @brief The Widget_UserClosePosition class
+* @details “用户平仓”界面
+*/
+class UI_COMMON_EXPORT Widget_UserClosePosition : public Widget_Base
 {
 	Q_OBJECT
 
 public:
-	Widget_Clerk(System_Type type, QWidget *parent = Q_NULLPTR);
-	~Widget_Clerk();
+	Widget_UserClosePosition(System_Type type, QWidget *parent = Q_NULLPTR);
+	~Widget_UserClosePosition();
 
 protected:
 	//设置headerlabels
 	void setHorizontalHeaderLabels(QStringList header);
 
 private:
-	Ui::Widget_Clerk *ui;
+	Ui::Widget_UserClosePosition *ui;
 
 private:
 	/**

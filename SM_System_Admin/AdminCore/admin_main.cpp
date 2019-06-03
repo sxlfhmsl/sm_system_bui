@@ -2,6 +2,7 @@
 #include "AdminCore\admin_datasummary.h"
 #include "AdminCore\admin_clerk.h"
 #include "AdminCore\admin_userposition.h"
+#include "AdminCore\admin_usercloseposition.h"
 
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
@@ -38,8 +39,11 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_Clerk();
 		else if (tab_name == "日志管理")
 			widget = new Admin_LogManage();
+		// 报表统计
 		else if (tab_name == "用户持仓")
 			widget = new Admin_UserPosition();
+		else if (tab_name == "用户平仓")
+			widget = new Admin_UserClosePosition();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}

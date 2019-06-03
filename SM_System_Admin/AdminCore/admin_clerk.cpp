@@ -4,6 +4,7 @@
 Admin_Clerk::Admin_Clerk(QWidget *parent)
 	: Widget_Clerk(Widget_Base::Admin, parent)
 {
+	// 创造表头
 	this->create_GridHead();
 }
 
