@@ -3,6 +3,7 @@
 #include "AdminCore\admin_clerk.h"
 #include "AdminCore\admin_userposition.h"
 #include "AdminCore\admin_usercloseposition.h"
+#include "AdminCore\admin_tradingbill.h"
 
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
@@ -44,6 +45,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_UserPosition();
 		else if (tab_name == "用户平仓")
 			widget = new Admin_UserClosePosition();
+		else if (tab_name == "交易账单")
+			widget = new Admin_TradingBill();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}

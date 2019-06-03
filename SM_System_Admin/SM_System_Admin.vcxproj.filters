@@ -84,6 +84,9 @@
     <ClCompile Include="AdminCore\admin_usercloseposition.cpp">
       <Filter>Source Files\AdminCore</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\admin_tradingbill.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -122,6 +125,9 @@
       <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
     <QtMoc Include="AdminCore\admin_usercloseposition.h">
+      <Filter>Header Files\AdminCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_tradingbill.h">
       <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
   </ItemGroup>

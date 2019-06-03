@@ -88,6 +88,9 @@
     <ClCompile Include="Core\widget_usercloseposition.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Core\widget_tradingbill.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_common.h">
@@ -130,6 +133,9 @@
     <QtUic Include="Core\widget_usercloseposition.ui">
       <Filter>Form Files\Core</Filter>
     </QtUic>
+    <QtUic Include="Core\widget_tradingbill.ui">
+      <Filter>Form Files\Core</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\sm_mainwindow.h">
@@ -166,6 +172,9 @@
       <Filter>Header Files\Core</Filter>
     </QtMoc>
     <QtMoc Include="Core\widget_usercloseposition.h">
+      <Filter>Header Files\Core</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\widget_tradingbill.h">
       <Filter>Header Files\Core</Filter>
     </QtMoc>
   </ItemGroup>
