@@ -16,6 +16,7 @@
 #include "AdminCore\Unique\admin_logmanage.h"
 #include "AdminCore\Unique\admin_mantrading.h"
 #include "AdminCore\Unique\admin_agentdrawmoney.h"
+#include "AdminCore\Unique\admin_stockmanage.h"
 
 //股票后台 主要功能界面  -----管理端
 Admin_Main::Admin_Main(QWidget *parent)
@@ -70,6 +71,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_NoticeManage();
 		else if (tab_name == "休市安排")
 			widget = new Admin_ClosedArrange();
+		else if (tab_name == "股票管理")
+			widget = new Admin_StockManage();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}
