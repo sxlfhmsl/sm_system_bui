@@ -1,29 +1,42 @@
-#include "widget_closed_arrange.h"
-#include "ui_widget_closed_arrange.h"
+#include "widget_closedarrange.h"
+#include "ui_widget_closedarrange.h"
 
 // “休市安排”页面
-Widget_Closed_Arrange::Widget_Closed_Arrange(QWidget *parent)
-	: QWidget(parent)
+Widget_ClosedArrange::Widget_ClosedArrange(System_Type type, QWidget *parent)
+	: Widget_Base(type, parent)
 {
-	ui = new Ui::Widget_Closed_Arrange();
+	ui = new Ui::Widget_ClosedArrange();
 	ui->setupUi(this);
 	// 初始化界面
-	this->init_Widget();
+	this->init_UI();
 }
 
-Widget_Closed_Arrange::~Widget_Closed_Arrange()
+Widget_ClosedArrange::~Widget_ClosedArrange()
 {
 	delete ui;
 }
 
-void Widget_Closed_Arrange::init_Widget()
+void Widget_ClosedArrange::init_UI()
 {
+	switch (this->current_Type)
+	{
+	case System_Type::Admin:
+		break;
+	case System_Type::Agent:
+		delete ui->pushButton_AddArrange;
+		ui->pushButton_AddArrange = nullptr;
+		delete ui->horizontalSpacer;
+		ui->horizontalSpacer = nullptr;
+		break;
+	}
 	this->init_DataGrid();
 }
 
-void Widget_Closed_Arrange::init_DataGrid()
+void Widget_ClosedArrange::init_DataGrid()
 {
-	QStringList grid_head;
-	grid_head << "管理员" << "休市日期" << "创建时间" << "备注" << "删除";
-	ui->widget_DataGrid->setHorizontalHeaderLabels(grid_head);
+}
+
+void  Widget_ClosedArrange::setHorizontalHeaderLabels(QStringList header)
+{
+	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
 }

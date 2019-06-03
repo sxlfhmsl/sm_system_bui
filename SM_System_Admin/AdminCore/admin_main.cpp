@@ -8,6 +8,7 @@
 #include "AdminCore\admin_rechargemanage.h"
 #include "AdminCore\admin_memberdrawmoney.h"
 #include "AdminCore\admin_noticemanage.h"
+#include "AdminCore\admin_closedarrange.h"
 
 #include "AdminCore\Unique\admin_memberaccount.h"
 #include "AdminCore\Unique\admin_agentaccount.h"
@@ -67,6 +68,8 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 		// 其他功能
 		else if (tab_name == "公告管理")
 			widget = new Admin_NoticeManage();
+		else if (tab_name == "休市安排")
+			widget = new Admin_ClosedArrange();
 		this->add_TabWidget(tab_name, widget);
 		return true;
 	}

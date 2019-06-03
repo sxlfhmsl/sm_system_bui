@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Widget_Closed_Arrange</class>
- <widget class="QWidget" name="Widget_Closed_Arrange">
+ <class>Widget_ClosedArrange</class>
+ <widget class="QWidget" name="Widget_ClosedArrange">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -81,7 +81,7 @@
   <customwidget>
    <class>Widget_DataGrid_Pa</class>
    <extends>QWidget</extends>
-   <header>corewidgets/widget_datagrid_pa.h</header>
+   <header>component/widget_datagrid_pa.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -1,30 +1,37 @@
 #pragma once
 
-#include <QWidget>
-namespace Ui { class Widget_Closed_Arrange; };
+#include "ui_common_global.h"
+
+#include "component\widget_base.h"
+
+namespace Ui { class Widget_ClosedArrange; };
 
 /**
-* @brief The Widget_Closed_Arrange class
+* @brief The Widget_ClosedArrange class
 * @details “休市安排”页面
 */
-class Widget_Closed_Arrange : public QWidget
+class UI_COMMON_EXPORT Widget_ClosedArrange : public Widget_Base
 {
 	Q_OBJECT
 
 public:
-	Widget_Closed_Arrange(QWidget *parent = Q_NULLPTR);
-	~Widget_Closed_Arrange();
+	Widget_ClosedArrange(System_Type type, QWidget *parent = Q_NULLPTR);
+	~Widget_ClosedArrange();
+
+protected:
+	//设置headerlabels
+	void setHorizontalHeaderLabels(QStringList header);
 
 private:
-	Ui::Widget_Closed_Arrange *ui;
+	Ui::Widget_ClosedArrange *ui;
 
 private:
 	/**
-	* @brief init_Widget
+	* @brief init_UI
 	* @author 盛录
 	* @details 初始化当前窗口
 	*/
-	void init_Widget();
+	void init_UI();
 
 	/**
 	* @brief init_DataGrid

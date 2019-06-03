@@ -105,6 +105,9 @@
     <ClCompile Include="AdminCore\admin_noticemanage.cpp">
       <Filter>Source Files\AdminCore</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\admin_closedarrange.cpp">
+      <Filter>Source Files\AdminCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -164,6 +167,9 @@
       <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
     <QtMoc Include="AdminCore\admin_noticemanage.h">
+      <Filter>Header Files\AdminCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AdminCore\admin_closedarrange.h">
       <Filter>Header Files\AdminCore</Filter>
     </QtMoc>
   </ItemGroup>
