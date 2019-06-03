@@ -4,7 +4,7 @@
 namespace Ui { class Admin_Admin; };
 
 /**
- * @brief The Widget_Admin class
+ * @brief The Admin_Admin class
  * @details “管理员”页面
  */
 class Admin_Admin : public Widget_Base

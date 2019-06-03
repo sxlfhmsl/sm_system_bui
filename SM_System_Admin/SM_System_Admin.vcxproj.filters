@@ -111,6 +111,9 @@
     <ClCompile Include="AdminCore\Unique\admin_stockmanage.cpp">
       <Filter>Source Files\AdminCore\Unique</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCore\Unique\admin_systemsetting.cpp">
+      <Filter>Source Files\AdminCore\Unique</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_admin.qrc">
@@ -178,6 +181,9 @@
     <QtMoc Include="AdminCore\Unique\admin_stockmanage.h">
       <Filter>Header Files\AdminCore\Unique</Filter>
     </QtMoc>
+    <QtMoc Include="AdminCore\Unique\admin_systemsetting.h">
+      <Filter>Header Files\AdminCore\Unique</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AdminCore\Unique\admin_memberaccount.ui">
@@ -199,6 +205,9 @@
       <Filter>Form Files\AdminCore\Unique</Filter>
     </QtUic>
     <QtUic Include="AdminCore\Unique\admin_stockmanage.ui">
+      <Filter>Form Files\AdminCore\Unique</Filter>
+    </QtUic>
+    <QtUic Include="AdminCore\Unique\admin_systemsetting.ui">
       <Filter>Form Files\AdminCore\Unique</Filter>
     </QtUic>
   </ItemGroup>

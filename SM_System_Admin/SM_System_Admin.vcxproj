@@ -134,6 +134,7 @@
     <ClCompile Include="AdminCore\Unique\admin_agentaccount.cpp" />
     <ClCompile Include="AdminCore\Unique\admin_logmanage.cpp" />
     <ClCompile Include="AdminCore\Unique\admin_stockmanage.cpp" />
+    <ClCompile Include="AdminCore\Unique\admin_systemsetting.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,7 @@
     <QtUic Include="AdminCore\Unique\admin_agentaccount.ui" />
     <QtUic Include="AdminCore\Unique\admin_logmanage.ui" />
     <QtUic Include="AdminCore\Unique\admin_stockmanage.ui" />
+    <QtUic Include="AdminCore\Unique\admin_systemsetting.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminCore\Unique\admin_agentaccount.h">
@@ -266,6 +268,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AdminCore\Unique\admin_stockmanage.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AdminCore\Unique\admin_systemsetting.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\Core;.\AdminCore</IncludePath>
     </QtMoc>
