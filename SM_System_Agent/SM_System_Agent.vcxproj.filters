@@ -84,6 +84,9 @@
     <ClCompile Include="AgentCore\agent_fundsdetails.cpp">
       <Filter>Source Files\AgentCore</Filter>
     </ClCompile>
+    <ClCompile Include="AgentCore\Unique\agent_withdrawfunds.cpp">
+      <Filter>Source Files\AgentCore\Unique</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_agent.qrc">
@@ -124,12 +127,18 @@
     <QtMoc Include="AgentCore\agent_fundsdetails.h">
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
+    <QtMoc Include="AgentCore\Unique\agent_withdrawfunds.h">
+      <Filter>Header Files\AgentCore\Unique</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AgentCore\Unique\agent_accountinfo.ui">
       <Filter>Form Files\AgentCore\Unique</Filter>
     </QtUic>
     <QtUic Include="AgentCore\Unique\agent_memberinfo.ui">
+      <Filter>Form Files\AgentCore\Unique</Filter>
+    </QtUic>
+    <QtUic Include="AgentCore\Unique\agent_withdrawfunds.ui">
       <Filter>Form Files\AgentCore\Unique</Filter>
     </QtUic>
   </ItemGroup>

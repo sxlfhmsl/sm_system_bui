@@ -8,6 +8,7 @@
 
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
+#include "AgentCore\Unique\agent_withdrawfunds.h"
 
 //股票后台 主要功能界面-----代理端
 Agent_Main::Agent_Main(QWidget *parent)
@@ -44,6 +45,8 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			widget = new Agent_TradingBill();
 		else if (tab_name == "资金明细")
 			widget = new Agent_FundsDetails();
+		else if (tab_name == "提款申请")
+			widget = new Agent_WithdrawFunds();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);
