@@ -93,6 +93,9 @@
     <ClCompile Include="AgentCore\agent_rechargemanage.cpp">
       <Filter>Source Files\AgentCore</Filter>
     </ClCompile>
+    <ClCompile Include="AgentCore\agent_noticemanage.cpp">
+      <Filter>Source Files\AgentCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_agent.qrc">
@@ -140,6 +143,9 @@
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
     <QtMoc Include="AgentCore\agent_rechargemanage.h">
+      <Filter>Header Files\AgentCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AgentCore\agent_noticemanage.h">
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
   </ItemGroup>

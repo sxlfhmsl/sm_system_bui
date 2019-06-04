@@ -23,8 +23,10 @@ void Widget_NoticeManage::init_UI()
 	case System_Type::Admin:
 		break;
 	case System_Type::Agent:
+		ui->frame_Bar->layout()->removeWidget(ui->pushButton_AddNotice);
 		delete ui->pushButton_AddNotice;
 		ui->pushButton_AddNotice = nullptr;
+		ui->frame_Bar->layout()->removeItem(ui->horizontalSpacer);
 		delete ui->horizontalSpacer;
 		ui->horizontalSpacer = nullptr;
 		break;
