@@ -1,5 +1,6 @@
 #include "agent_main.h"
 #include "AgentCore\agent_datasummary.h"
+#include "AgentCore\agent_clerk.h"
 
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
@@ -28,6 +29,8 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			widget = new Agent_AccountInfo();
 		else if (tab_name == "会员信息")
 			widget = new Agent_MemberInfo();
+		else if (tab_name == "业务员")
+			widget = new Agent_Clerk();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);
