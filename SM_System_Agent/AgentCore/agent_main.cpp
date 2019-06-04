@@ -2,6 +2,7 @@
 #include "AgentCore\agent_datasummary.h"
 
 #include "AgentCore\Unique\agent_accountinfo.h"
+#include "AgentCore\Unique\agent_memberinfo.h"
 
 //股票后台 主要功能界面-----代理端
 Agent_Main::Agent_Main(QWidget *parent)
@@ -25,6 +26,8 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			widget = new Agent_DataSummary();
 		else if (tab_name == "账户信息")
 			widget = new Agent_AccountInfo();
+		else if (tab_name == "会员信息")
+			widget = new Agent_MemberInfo();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);

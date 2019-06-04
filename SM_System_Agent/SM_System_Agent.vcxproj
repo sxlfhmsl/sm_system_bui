@@ -119,6 +119,7 @@
     <ClCompile Include="AgentCore\agent_main.cpp" />
     <ClCompile Include="AgentCore\agent_mw.cpp" />
     <ClCompile Include="AgentCore\Unique\agent_accountinfo.cpp" />
+    <ClCompile Include="AgentCore\Unique\agent_memberinfo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +159,13 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="AgentCore\Unique\agent_accountinfo.ui" />
+    <QtUic Include="AgentCore\Unique\agent_memberinfo.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AgentCore\Unique\agent_memberinfo.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
+    </QtMoc>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
