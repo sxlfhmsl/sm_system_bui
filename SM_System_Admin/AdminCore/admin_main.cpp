@@ -79,8 +79,11 @@ bool Admin_Main::switch_TabWidget(QString tab_name)
 			widget = new Admin_SystemSetting();
 		else if (tab_name == "交易规则")
 			widget = new Admin_TradingRules();
-		this->add_TabWidget(tab_name, widget);
-		return true;
+		if (widget != nullptr)
+		{
+			this->add_TabWidget(tab_name, widget);
+			return true;
+		}
 	}
 	return false;
 }
