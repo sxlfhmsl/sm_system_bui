@@ -81,6 +81,9 @@
     <ClCompile Include="AgentCore\agent_tradingbill.cpp">
       <Filter>Source Files\AgentCore</Filter>
     </ClCompile>
+    <ClCompile Include="AgentCore\agent_fundsdetails.cpp">
+      <Filter>Source Files\AgentCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_agent.qrc">
@@ -116,6 +119,9 @@
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
     <QtMoc Include="AgentCore\agent_tradingbill.h">
+      <Filter>Header Files\AgentCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AgentCore\agent_fundsdetails.h">
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
   </ItemGroup>
