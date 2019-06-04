@@ -8,6 +8,7 @@
 #include "AgentCore\agent_memberdrawmoney.h"
 #include "AgentCore\agent_rechargemanage.h"
 #include "AgentCore\agent_noticemanage.h"
+#include "AgentCore\agent_closedarrange.h"
 
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
@@ -57,6 +58,8 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 		// 其他功能
 		else if (tab_name == "公告管理")
 			widget = new Agent_NoticeManage();
+		else if (tab_name == "休市安排")
+			widget = new Agent_ClosedArrange();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);

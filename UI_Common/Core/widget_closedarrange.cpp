@@ -23,8 +23,10 @@ void Widget_ClosedArrange::init_UI()
 	case System_Type::Admin:
 		break;
 	case System_Type::Agent:
+		ui->frame_Bar->layout()->removeWidget(ui->pushButton_AddArrange);
 		delete ui->pushButton_AddArrange;
 		ui->pushButton_AddArrange = nullptr;
+		ui->frame_Bar->layout()->removeItem(ui->horizontalSpacer);
 		delete ui->horizontalSpacer;
 		ui->horizontalSpacer = nullptr;
 		break;
