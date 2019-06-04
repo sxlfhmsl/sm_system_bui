@@ -6,6 +6,7 @@
 #include "AgentCore\agent_tradingbill.h"
 #include "AgentCore\agent_fundsdetails.h"
 #include "AgentCore\agent_memberdrawmoney.h"
+#include "AgentCore\agent_rechargemanage.h"
 
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
@@ -50,6 +51,9 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			widget = new Agent_WithdrawFunds();
 		else if (tab_name == "会员提款")
 			widget = new Agent_MemberDrawMoney();
+		else if (tab_name == "充值管理")
+			widget = new Agent_RechargeManage();
+		// 其他功能
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);
