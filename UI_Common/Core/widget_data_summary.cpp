@@ -23,8 +23,10 @@ void Widget_Data_Summary::init_UI()
 	case Widget_Base::Admin:
 		break;
 	case Widget_Base::Agent:
+		ui->frame_SummaryContent->layout()->removeWidget(ui->label_4);
 		delete ui->label_4;
 		ui->label_4 = nullptr;
+		ui->frame_SummaryContent->layout()->removeWidget(ui->comboBox);
 		delete ui->comboBox;
 		ui->comboBox = nullptr;
 		break;

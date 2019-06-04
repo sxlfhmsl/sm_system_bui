@@ -23,8 +23,10 @@ void Widget_UserClosePosition::init_UI()
 	case System_Type::Admin:
 		break;
 	case System_Type::Agent:
+		ui->frame_Bar->layout()->removeWidget(ui->label_Agent);
 		delete ui->label_Agent;
 		ui->label_Agent = nullptr;
+		ui->frame_Bar->layout()->removeWidget(ui->comboBox_Agent);
 		delete ui->comboBox_Agent;
 		ui->comboBox_Agent = nullptr;
 		break;
