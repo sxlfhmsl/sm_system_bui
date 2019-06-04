@@ -109,6 +109,9 @@
     <ClCompile Include="Core\widget_tradingrules.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="component\dialog_base.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_common.h">
@@ -230,6 +233,9 @@
     </QtMoc>
     <QtMoc Include="Core\widget_tradingrules.h">
       <Filter>Header Files\Core</Filter>
+    </QtMoc>
+    <QtMoc Include="component\dialog_base.h">
+      <Filter>Header Files\component</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

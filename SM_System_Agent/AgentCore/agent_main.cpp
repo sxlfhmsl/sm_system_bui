@@ -13,6 +13,7 @@
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
 #include "AgentCore\Unique\agent_withdrawfunds.h"
+#include "AgentCore\Unique\agent_changepass.h"
 
 //股票后台 主要功能界面-----代理端
 Agent_Main::Agent_Main(QWidget *parent)
@@ -60,6 +61,12 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			widget = new Agent_NoticeManage();
 		else if (tab_name == "休市安排")
 			widget = new Agent_ClosedArrange();
+		else if (tab_name == "修改密码")
+		{
+			Agent_ChangePass* dialog = new Agent_ChangePass(this);
+			dialog->exec();
+			delete dialog;
+		}
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);
