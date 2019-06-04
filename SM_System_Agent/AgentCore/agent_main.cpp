@@ -1,6 +1,7 @@
 #include "agent_main.h"
 #include "AgentCore\agent_datasummary.h"
 #include "AgentCore\agent_clerk.h"
+#include "AgentCore\agent_userposition.h"
 
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
@@ -31,6 +32,9 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			widget = new Agent_MemberInfo();
 		else if (tab_name == "业务员")
 			widget = new Agent_Clerk();
+		// 报表统计
+		else if (tab_name == "用户持仓")
+			widget = new Agent_UserPosition();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);

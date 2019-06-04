@@ -72,6 +72,9 @@
     <ClCompile Include="AgentCore\agent_clerk.cpp">
       <Filter>Source Files\AgentCore</Filter>
     </ClCompile>
+    <ClCompile Include="AgentCore\agent_userposition.cpp">
+      <Filter>Source Files\AgentCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_agent.qrc">
@@ -98,6 +101,9 @@
       <Filter>Header Files\AgentCore\Unique</Filter>
     </QtMoc>
     <QtMoc Include="AgentCore\agent_clerk.h">
+      <Filter>Header Files\AgentCore</Filter>
+    </QtMoc>
+    <QtMoc Include="AgentCore\agent_userposition.h">
       <Filter>Header Files\AgentCore</Filter>
     </QtMoc>
   </ItemGroup>
