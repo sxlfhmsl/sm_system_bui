@@ -119,6 +119,7 @@
     <ClCompile Include="AgentCore\agent_login.cpp" />
     <ClCompile Include="AgentCore\agent_main.cpp" />
     <ClCompile Include="AgentCore\agent_mw.cpp" />
+    <ClCompile Include="AgentCore\agent_tradingbill.cpp" />
     <ClCompile Include="AgentCore\agent_usercloseposition.cpp" />
     <ClCompile Include="AgentCore\agent_userposition.cpp" />
     <ClCompile Include="AgentCore\Unique\agent_accountinfo.cpp" />
@@ -184,6 +185,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AgentCore\agent_usercloseposition.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AgentCore\agent_tradingbill.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
     </QtMoc>

@@ -3,6 +3,7 @@
 #include "AgentCore\agent_clerk.h"
 #include "AgentCore\agent_userposition.h"
 #include "AgentCore\agent_usercloseposition.h"
+#include "AgentCore\agent_tradingbill.h"
 
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
@@ -38,6 +39,8 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			widget = new Agent_UserPosition();
 		else if (tab_name == "用户平仓")
 			widget = new Agent_UserClosePosition();
+		else if (tab_name == "交易账单")
+			widget = new Agent_TradingBill();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);
