@@ -9,6 +9,7 @@
 #include "AgentCore\agent_rechargemanage.h"
 #include "AgentCore\agent_noticemanage.h"
 #include "AgentCore\agent_closedarrange.h"
+#include "AgentCore\agent_tradingrules.h"
 
 #include "AgentCore\Unique\agent_accountinfo.h"
 #include "AgentCore\Unique\agent_memberinfo.h"
@@ -67,6 +68,8 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 			dialog->exec();
 			delete dialog;
 		}
+		else if (tab_name == "交易规则")
+			widget = new Agent_TradingRules();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);

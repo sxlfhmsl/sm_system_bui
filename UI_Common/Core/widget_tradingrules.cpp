@@ -25,8 +25,10 @@ void Widget_TradingRules::init_UI()
 	case System_Type::Agent:
 		ui->lineEdit_Title->setEnabled(false);
 		ui->textEdit_Content->setEnabled(false);
+		this->layout()->removeWidget(ui->pushButton_Save);
 		delete ui->pushButton_Save;
 		ui->pushButton_Save = nullptr;
+		this->layout()->removeItem(ui->horizontalSpacer_2);
 		delete ui->horizontalSpacer_2;
 		ui->horizontalSpacer_2 = nullptr;
 		break;
