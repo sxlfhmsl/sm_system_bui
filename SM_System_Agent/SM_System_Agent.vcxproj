@@ -131,6 +131,7 @@
     <ClCompile Include="AgentCore\Unique\agent_accountinfo.cpp" />
     <ClCompile Include="AgentCore\Unique\agent_changepass.cpp" />
     <ClCompile Include="AgentCore\Unique\agent_memberinfo.cpp" />
+    <ClCompile Include="AgentCore\Unique\agent_smsservice.cpp" />
     <ClCompile Include="AgentCore\Unique\agent_withdrawfunds.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -173,6 +174,7 @@
     <QtUic Include="AgentCore\Unique\agent_accountinfo.ui" />
     <QtUic Include="AgentCore\Unique\agent_changepass.ui" />
     <QtUic Include="AgentCore\Unique\agent_memberinfo.ui" />
+    <QtUic Include="AgentCore\Unique\agent_smsservice.ui" />
     <QtUic Include="AgentCore\Unique\agent_withdrawfunds.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="AgentCore\agent_tradingrules.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AgentCore\Unique\agent_smsservice.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\UI_Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;.\AgentCore</IncludePath>
     </QtMoc>

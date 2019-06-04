@@ -15,6 +15,7 @@
 #include "AgentCore\Unique\agent_memberinfo.h"
 #include "AgentCore\Unique\agent_withdrawfunds.h"
 #include "AgentCore\Unique\agent_changepass.h"
+#include "AgentCore\Unique\agent_smsservice.h"
 
 //股票后台 主要功能界面-----代理端
 Agent_Main::Agent_Main(QWidget *parent)
@@ -70,6 +71,9 @@ bool Agent_Main::switch_TabWidget(QString tab_name)
 		}
 		else if (tab_name == "交易规则")
 			widget = new Agent_TradingRules();
+		// 增值服务
+		else if (tab_name == "短信服务")
+			widget = new Agent_SMSService();
 		if (widget != nullptr)
 		{
 			this->add_TabWidget(tab_name, widget);
