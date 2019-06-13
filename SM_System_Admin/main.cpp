@@ -4,8 +4,6 @@
 
 int main(int argc, char *argv[])
 {
-	Admin_Http::instance();
-	Admin_Http::instance();
 	QApplication a(argc, argv);
 	Admin_MW w;
 	w.show();
