@@ -217,4 +217,9 @@
       <Filter>Form Files\AdminCore\Unique</Filter>
     </QtUic>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdminCore\Unique\admin_singleton.h">
+      <Filter>Header Files\AdminCore\Unique</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
