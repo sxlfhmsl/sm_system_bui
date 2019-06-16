@@ -19,7 +19,15 @@ public:
 	HttpManager(QObject *parent = nullptr);
 	~HttpManager();
 
+	// 建立get请求， 请求数据或者文件
+	HttpReply* get(QString url);
+
+	// 建立post请求, 请求数据或者文件
 	HttpReply* post(QString url, const QJsonObject &params);
+
+	// 建立post请求, 
+	// url:地址；content_type:header中的content type；f_name:文件名
+	HttpReply* post(QString url, const QString &content_type, const QString &f_name);
 
 private:
 	// 网络管理类
