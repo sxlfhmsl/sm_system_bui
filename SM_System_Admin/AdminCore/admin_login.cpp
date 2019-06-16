@@ -1,4 +1,7 @@
 #include "admin_login.h"
+#include "Unique\admin_singleton.h"
+#include <QJsonDocument>
+#include <QJsonObject>
 
 //股票后台 登录
 Admin_Login::Admin_Login(QWidget *parent)
