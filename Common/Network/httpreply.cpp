@@ -23,14 +23,17 @@ void HttpReply::slot_recv_finished()
 		QVariant content_type = this->reply->header(QNetworkRequest::ContentTypeHeader);
 		if (content_type.toString().indexOf("application/json") != -1)
 		{
-			emit finshed_json(this->parse_to_json());
+			this->parse_json.empty();
+			this->parse_json = this->parse_to_json();
 		}
 	}
 	else
 	{
-		QVariant status_code = this->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
-		QString error_msg = this->reply->errorString();
+		this->parse_json.empty();
+		this->parse_json.insert("code", this->reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt());
+		this->parse_json.insert("msg", this->reply->errorString());
 	}
+	emit finshed();
 }
 
 QJsonObject HttpReply::parse_to_json()
@@ -50,10 +53,11 @@ QJsonObject HttpReply::parse_to_json()
 	}
 	else
 	{
-		// 获取状态码
-		QVariant statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
-		json_default["code"] = statusCode.toInt();
-		json_default["msg"] = this->reply->errorString();
 		return json_default;
 	}
+}
+
+QJsonObject& HttpReply::get_parse_json()
+{
+	return this->parse_json;
 }

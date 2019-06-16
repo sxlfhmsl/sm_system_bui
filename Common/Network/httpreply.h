@@ -3,27 +3,35 @@
 #include <QObject>
 #include <QJsonObject>
 
+#include "common_global.h"
+
 class QNetworkReply;
 /**
  * @brief The HttpReply class
  * @details Http回复类
  */
-class HttpReply : public QObject
+class COMMON_EXPORT HttpReply : public QObject
 {
 	Q_OBJECT
 
 signals:
 	// 接收json送出此信号
-	// params recv : 接收后解析成功的参数
-	void finshed_json(QJsonObject &recv);
+	void finshed();
 
 public:
 	HttpReply(QNetworkReply* reply, QObject *parent = nullptr);
 	~HttpReply();
 
+	// 响应结束后得到结果parse_json
+	QJsonObject& get_parse_json();
+
 private:
 	// 回复类
 	QNetworkReply* reply = nullptr;
+
+	// 结束后的参数结果保存地方
+	QJsonObject parse_json;
+
 
 	// 分析得到json
 	// 返回： json字符串
