@@ -190,4 +190,9 @@
       <Filter>Form Files\AgentCore\Unique</Filter>
     </QtUic>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AgentCore\Unique\agent_singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

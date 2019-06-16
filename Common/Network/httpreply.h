@@ -30,7 +30,7 @@ private:
 	QNetworkReply* reply = nullptr;
 
 	// 结束后的参数结果保存地方
-	// 数据结构{code: int(10000以下为异常代码无数据只有错误原因), data: 数据, msg:消息}
+	// 数据结构{code: int(1-10000为异常代码无数据只有错误原因), data: 数据, msg:消息}
 	QJsonObject parse_json;
 
 
