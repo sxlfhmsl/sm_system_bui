@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SM_System_Agent", "SM_Syste
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "Common\Common.vcxproj", "{8A1A664D-0BCB-4BA7-A2FA-7E2486D2D6F4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HttpTest", "HttpTest\HttpTest.vcxproj", "{675CE756-1A89-42ED-89D0-924F5F537C64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,12 @@ Global
 		{8A1A664D-0BCB-4BA7-A2FA-7E2486D2D6F4}.Release|x64.Build.0 = Release|x64
 		{8A1A664D-0BCB-4BA7-A2FA-7E2486D2D6F4}.Release|x86.ActiveCfg = Release|Win32
 		{8A1A664D-0BCB-4BA7-A2FA-7E2486D2D6F4}.Release|x86.Build.0 = Release|Win32
+		{675CE756-1A89-42ED-89D0-924F5F537C64}.Debug|x64.ActiveCfg = Debug|x64
+		{675CE756-1A89-42ED-89D0-924F5F537C64}.Debug|x64.Build.0 = Debug|x64
+		{675CE756-1A89-42ED-89D0-924F5F537C64}.Debug|x86.ActiveCfg = Debug|x64
+		{675CE756-1A89-42ED-89D0-924F5F537C64}.Release|x64.ActiveCfg = Release|x64
+		{675CE756-1A89-42ED-89D0-924F5F537C64}.Release|x64.Build.0 = Release|x64
+		{675CE756-1A89-42ED-89D0-924F5F537C64}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

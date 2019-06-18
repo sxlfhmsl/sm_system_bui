@@ -25,4 +25,10 @@ public:
 
 protected:
 	System_Type current_Type;
+
+protected slots:
+    // 此函数存放需要界面初始化完成后执行的代码，
+    // 加入原因（在界面初始化函数中加入http请求，可能会加入事件循环失败）。
+    // 实现原理单次 QTimer
+    virtual void slot_need_delay() {};
 };

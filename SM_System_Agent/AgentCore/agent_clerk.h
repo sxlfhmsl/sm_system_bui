@@ -12,6 +12,9 @@ public:
 	Agent_Clerk(QWidget *parent = Q_NULLPTR);
 	~Agent_Clerk();
 
+protected slots:
+	void slot_need_delay();
+
 private:
 	// 更新clerk Reply
 	HttpReply* reply_Update_Clerk = nullptr;

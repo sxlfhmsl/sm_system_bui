@@ -14,8 +14,8 @@ HttpReply::HttpReply(QNetworkReply* reply, QObject *parent)
 HttpReply::~HttpReply()
 {
 	// 处理到reply
-	this->reply->deleteLater();
 	QObject::disconnect(this->reply, SIGNAL(finished()), this, SLOT(slot_recv_finished()));
+	this->reply->deleteLater();
 }
 
 void HttpReply::slot_recv_finished()
