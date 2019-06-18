@@ -3,14 +3,12 @@
 #include <QObject>
 #include <QJsonObject>
 
-#include "common_global.h"
-
 class QNetworkReply;
 /**
  * @brief The HttpReply class
  * @details Http回复类
  */
-class COMMON_EXPORT HttpReply : public QObject
+class HttpReply : public QObject
 {
 	Q_OBJECT
 

@@ -25,7 +25,7 @@ private:
 	static QAtomicPointer<T> m_instance;
 
 public:
-	static T& instance();
+	static T* instance();
 };
 
 // 一个线程可以锁同一互斥量
@@ -37,7 +37,7 @@ template<class T>
 QAtomicPointer<T> Singleton<T>::m_instance;
 
 template<typename T>
-T& Singleton<T>::instance()
+T* Singleton<T>::instance()
 {
 #ifndef Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE
 	if (!QAtomicPointer<T>::isTestAndSetNative())
@@ -50,5 +50,5 @@ T& Singleton<T>::instance()
 		QMutexLocker locker(&m_mutex);
 		m_instance.testAndSetOrdered(0, new T);
 	}
-	return *m_instance.load();
+	return m_instance.load();
 }

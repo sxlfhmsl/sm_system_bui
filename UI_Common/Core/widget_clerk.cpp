@@ -32,7 +32,20 @@ void Widget_Clerk::init_DataGrid()
 {
 }
 
-void  Widget_Clerk::setHorizontalHeaderLabels(QStringList header)
+void  Widget_Clerk::setHorizontalHeaderLabels(const QStringList &header)
 {
 	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+}
+
+void Widget_Clerk::setHorizontalHeaderLabels(const QStringList &header, const QStringList &names)
+{
+	ui->widget_DataGrid->setHorizontalHeaderLabels(header, names);
+}
+
+void Widget_Clerk::setGridData(const QJsonObject &data)
+{
+	if (data.contains("data"))
+	{
+		ui->widget_DataGrid->setGridData(data.value("data").toObject());
+	}
 }

@@ -108,6 +108,12 @@
     <ClCompile Include="AgentCore\Unique\agent_smsservice.cpp">
       <Filter>Source Files\AgentCore\Unique</Filter>
     </ClCompile>
+    <ClCompile Include="AgentCore\Network\httpmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AgentCore\Network\httpreply.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="sm_system_agent.qrc">
@@ -171,6 +177,12 @@
     </QtMoc>
     <QtMoc Include="AgentCore\Unique\agent_smsservice.h">
       <Filter>Header Files\AgentCore\Unique</Filter>
+    </QtMoc>
+    <QtMoc Include="AgentCore\Network\httpmanager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AgentCore\Network\httpreply.h">
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

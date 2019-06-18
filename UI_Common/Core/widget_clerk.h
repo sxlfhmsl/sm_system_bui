@@ -20,7 +20,13 @@ public:
 
 protected:
 	//设置headerlabels
-	void setHorizontalHeaderLabels(QStringList header);
+	void setHorizontalHeaderLabels(const QStringList &header);
+
+	//设置headerlabels， 和ids
+	void setHorizontalHeaderLabels(const QStringList &header, const QStringList &names);
+
+	// 更新表格数据
+	void setGridData(const QJsonObject &data);
 
 private:
 	Ui::Widget_Clerk *ui;

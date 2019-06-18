@@ -6,6 +6,8 @@
 #include <QHttpMultiPart>
 #include <QFile>
 
+HttpManager* HttpManager::m_instance = nullptr;
+
 HttpManager::HttpManager(QObject *parent)
 	: QObject(parent)
 {
@@ -63,4 +65,11 @@ HttpReply* HttpManager::post(QString url, const QString &content_type, const QSt
 
 	// 开始上传
 	return new HttpReply(this->manager->post(request, multiPart));
+}
+
+HttpManager* HttpManager::instance()
+{
+	if (HttpManager::m_instance == nullptr)
+		HttpManager::m_instance = new HttpManager();
+	return HttpManager::m_instance;
 }

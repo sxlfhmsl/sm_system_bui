@@ -14,7 +14,7 @@ Admin_Clerk::~Admin_Clerk()
 
 void Admin_Clerk::create_GridHead()
 {
-	QStringList head;
+	QStringList head, names;
 	head << "代理" << "名称" << "修改" << "删除";
 	this->setHorizontalHeaderLabels(head);
 }
