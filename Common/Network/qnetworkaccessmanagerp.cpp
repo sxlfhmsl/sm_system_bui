@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QThread>
 
+// 禁止外部调用
 QNetworkAccessManagerP::QNetworkAccessManagerP(QObject *parent)
 	: QNetworkAccessManager(parent)
 {

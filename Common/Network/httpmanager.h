@@ -11,6 +11,8 @@ class HttpReply;
 /**
  * @brief The HttpManager class
  * @details Http通信管理类
+ * @more:使用方法：
+ * 实例化此类    调用get或者post方法得到返回的HttpReply对象     HttpReply收到finished信号,从其中调取需要的参数
  */
 class COMMON_EXPORT HttpManager : public QObject
 {
