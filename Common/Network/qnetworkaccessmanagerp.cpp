@@ -4,6 +4,7 @@
 #include <QHttpPart>
 #include <QNetworkReply>
 #include <QFile>
+#include <QThread>
 
 QNetworkAccessManagerP::QNetworkAccessManagerP(QObject *parent)
 	: QNetworkAccessManager(parent)
@@ -62,7 +63,7 @@ void QNetworkAccessManagerP::post(HttpReply* reply, QString url, QString content
 
 void QNetworkAccessManagerP::reply_finished(QNetworkReply* reply)
 {
-	qDebug() << "请求响应开始" << endl;
+	qDebug() << "请求响应开始" << QThread::currentThreadId() << endl;
 	QJsonObject result;
 	if (reply->error() == QNetworkReply::NoError)
 	{
@@ -82,7 +83,7 @@ void QNetworkAccessManagerP::reply_finished(QNetworkReply* reply)
 		this->reply_map.remove(reply);
 	}
 	reply->deleteLater();
-	qDebug() << "请求响应结束" << endl;
+	qDebug() << "请求响应结束" << QThread::currentThreadId() << endl;
 }
 
 QJsonObject QNetworkAccessManagerP::parse_to_json(QNetworkReply* reply)
