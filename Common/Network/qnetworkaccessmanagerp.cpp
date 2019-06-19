@@ -98,7 +98,7 @@ QJsonObject QNetworkAccessManagerP::parse_to_json(QNetworkReply* reply)
 	{
 		QJsonObject obj = parse_doucment.object();
 		if (!obj.contains("code"))
-			return json_default;
+			obj.insert("code", 0);
 		return obj;
 	}
 	else
