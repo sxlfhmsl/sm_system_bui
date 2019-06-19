@@ -1,11 +1,12 @@
 #pragma once
 
 #include <QObject>
-#include <QMap>
+#include <QJsonObject>
 
 #include "common_global.h"
 
-class QNetworkAccessManager;
+class QNetworkAccessManagerP;
+class QThread;
 class HttpReply;
 /**
  * @brief The HttpManager class
@@ -15,6 +16,27 @@ class COMMON_EXPORT HttpManager : public QObject
 {
 	Q_OBJECT
 
+signals:
+	// 禁止外部调用-----与QNetworkAccessManagerP配合绑定-----可能跨线程
+	// 发起get请求信号
+	// 参数0 与请求方通信的对象
+	// 参数1 url地址
+	void signal_get(HttpReply*, QString);
+
+	// 禁止外部调用-----与QNetworkAccessManagerP配合绑定-----可能跨线程
+	// 发起post请求信号
+	// 参数0 与请求方通信的对象
+	// 参数1 url地址
+	// 参数2 请求参数
+	void signal_post(HttpReply*, QString, QJsonObject);
+
+	// 禁止外部调用-----与QNetworkAccessManagerP配合绑定-----可能跨线程
+	// 发起post请求信号-----发送文件
+	// 参数0 与请求方通信的对象
+	// 参数1 url地址
+	// 参数2 请求头 content-type
+	// 参数3 文件路径
+	void signal_post(HttpReply*, QString, QString, QString);
 public:
 	HttpManager(QObject *parent = nullptr);
 	~HttpManager();
@@ -31,14 +53,14 @@ public:
 
 private:
 	// 网络管理类
-	QNetworkAccessManager *manager = nullptr;
-
-	// 默认header 已存在的，token不存放于此
-	QMap<int,QString> default_header;
+	QNetworkAccessManagerP *manager = nullptr;
+	// 网络管理类所在线程
+	QThread *thread;
 
 	// 初始化网络类
 	void init_Manager();
 
-	// 基础地址
-	const QString baseurl = "http://127.0.0.1:5000";
+private slots:
+	// 请求完成-----一般参数
+    void slot_json_result(HttpReply* reply, QJsonObject result);
 };

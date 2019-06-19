@@ -1,10 +1,8 @@
 #include "httpmanager.h"
 #include "httpreply.h"
+#include "qnetworkaccessmanagerp.h"
 
-#include <QNetworkAccessManager>
-#include <QJsonDocument>
-#include <QHttpMultiPart>
-#include <QFile>
+#include <QThread>
 
 HttpManager::HttpManager(QObject *parent)
 	: QObject(parent)
@@ -14,53 +12,55 @@ HttpManager::HttpManager(QObject *parent)
 
 HttpManager::~HttpManager()
 {
+	this->thread->quit();
+	QObject::disconnect(this, SIGNAL(signal_get(HttpReply*, QString)), this->manager, SLOT(get(HttpReply*, QString)));
+	QObject::disconnect(this, SIGNAL(signal_post(HttpReply*, QString, QJsonObject)), this->manager, SLOT(post(HttpReply*, QString, QJsonObject)));
+	QObject::disconnect(this, SIGNAL(signal_post(HttpReply*, QString, QString, QString)), this->manager, SLOT(post(HttpReply*, QString, QString, QString)));
+
+	QObject::disconnect(this->manager, SIGNAL(signal_json_result(HttpReply*, QJsonObject)), this, SLOT(slot_json_result(HttpReply*, QJsonObject)));
+	this->manager->deleteLater();
+	this->thread->deleteLater();
 }
 
 void HttpManager::init_Manager()
 {
-	this->manager = new QNetworkAccessManager(this);
-	this->default_header.insert(QNetworkRequest::UserAgentHeader, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36");
+	this->manager = new QNetworkAccessManagerP();
+	this->thread = new QThread();
+	this->manager->moveToThread(this->thread);
+	QObject::connect(this, SIGNAL(signal_get(HttpReply*, QString)), this->manager, SLOT(get(HttpReply*, QString)));
+	QObject::connect(this, SIGNAL(signal_post(HttpReply*, QString, QJsonObject)), this->manager, SLOT(post(HttpReply*, QString, QJsonObject)));
+	QObject::connect(this, SIGNAL(signal_post(HttpReply*, QString, QString, QString)), this->manager, SLOT(post(HttpReply*, QString, QString, QString)));
+
+	QObject::connect(this->manager, SIGNAL(signal_json_result(HttpReply*, QJsonObject)), this, SLOT(slot_json_result(HttpReply*, QJsonObject)));
+	this->thread->start();
 }
 
 // get请求
 HttpReply* HttpManager::get(QString url)
 {
-	QNetworkRequest request(QUrl(this->baseurl + url));
-	foreach(int h_key, this->default_header.keys())
-		request.setHeader((QNetworkRequest::KnownHeaders)h_key, QVariant(this->default_header[h_key]));
-	return new HttpReply(this->manager->get(request));
+	HttpReply* reply = new HttpReply();
+	emit this->signal_get(reply, url);
+	return reply;
 }
 
 // post请求-----普通
 HttpReply* HttpManager::post(QString url, const QJsonObject &params)
 {
-	QNetworkRequest request(QUrl(this->baseurl + url));
-	foreach(int h_key, this->default_header.keys())
-		request.setHeader((QNetworkRequest::KnownHeaders)h_key, QVariant(this->default_header[h_key]));
-	request.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/json;charset=UTF-8"));
-	QJsonDocument docu(params);
-	HttpReply *reply = new HttpReply(this->manager->post(request, docu.toJson(QJsonDocument::Compact)));
+	HttpReply* reply = new HttpReply();
+
+	emit this->signal_post(reply, url, params);
 	return reply;
 }
 
 // post请求-----上传文件
 HttpReply* HttpManager::post(QString url, const QString &content_type, const QString &f_name)
 {
-	QNetworkRequest request(QUrl(this->baseurl + url));
-	foreach(int h_key, this->default_header.keys())
-		request.setHeader((QNetworkRequest::KnownHeaders)h_key, QVariant(this->default_header[h_key]));
-	QHttpMultiPart *multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
-	QHttpPart file_part;
-	file_part.setHeader(QNetworkRequest::ContentTypeHeader, QVariant(content_type));
-	file_part.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"file\"; filename=\"" + f_name + "\""));
+	HttpReply* reply = new HttpReply();
+	emit this->signal_post(reply, url, content_type, f_name);
+	return reply;
+}
 
-	// 文件
-	QFile *file = new QFile(f_name);
-	file->open(QIODevice::ReadOnly);
-	file_part.setBodyDevice(file);
-	file->setParent(multiPart);
-	multiPart->append(file_part);
-
-	// 开始上传
-	return new HttpReply(this->manager->post(request, multiPart));
+void HttpManager::slot_json_result(HttpReply* reply, QJsonObject result)
+{
+	reply->set_parse_json(result);
 }

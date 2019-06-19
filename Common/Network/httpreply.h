@@ -5,10 +5,9 @@
 
 #include "common_global.h"
 
-class QNetworkReply;
 /**
  * @brief The HttpReply class
- * @details Http回复类
+ * @details Http回复类,需自行删除 delete
  */
 class COMMON_EXPORT HttpReply : public QObject
 {
@@ -19,26 +18,19 @@ signals:
 	void finished();
 
 public:
-	HttpReply(QNetworkReply* reply, QObject *parent = nullptr);
+	HttpReply(QObject *parent = nullptr);
 	~HttpReply();
 
 	// 响应结束后得到结果parse_json
 	QJsonObject& get_parse_json();
 
+	// 设置响应结束后得到结果parse_json
+	void set_parse_json(QJsonObject parse_json);
+
 private:
-	// 回复类
-	QNetworkReply* reply = nullptr;
 
 	// 结束后的参数结果保存地方
-	// 数据结构{code: int(1-10000为异常代码无数据只有错误原因), data: 数据, msg:消息}
+	// 数据结构 ----- 本地服务请求{code: int(1-10000为异常代码无数据只有错误原因， 0请求成功), data: 数据, msg:消息}
+	// 如需请求外部-----格式会有所变化
 	QJsonObject parse_json;
-
-
-	// 分析得到json
-	// 返回： json字符串
-	QJsonObject parse_to_json();
-
-private slots:
-    // 接收完成信号
-    void slot_recv_finished();
 };
