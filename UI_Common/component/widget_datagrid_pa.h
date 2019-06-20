@@ -16,44 +16,54 @@ class UI_COMMON_EXPORT Widget_DataGrid_Pa : public QWidget
 	Q_OBJECT
 
 public:
-	// 头labels和names
-	QStringList labels, names;
+	// labels：表头
+	QStringList labels;
 
 	Widget_DataGrid_Pa(QWidget *parent = Q_NULLPTR);
 	~Widget_DataGrid_Pa();
 
 	/**
-	* @brief get_Model
-	* @author 盛录
-	* @details 返回model
-	*/
-	QStandardItemModel* get_Model();
-
-	/**
-	* @brief setHorizontalHeaderLabels
-	* @para: labels 表头
-	* @author 盛录
-	* @details 设置表格头
-	*/
-	void setHorizontalHeaderLabels(const QStringList &labels);
-
-	/**
 	 * @brief setHorizontalHeaderLabels
 	 * @para: labels 表头
-	 * @para: names 名称
 	 * @author 盛录
 	 * @details 设置表格头
 	 */
-	void setHorizontalHeaderLabels(const QStringList &labels, const QStringList &names);
+	void setHorizontalHeaderLabels(const QStringList &labels);
 
 	/**
-	 * @brief setGridData
-	 * @para: data 数据{rows:行数据， total:总数}
+	 * @brief setItem
+	 * @para: row 行号
+	 * @para: col 列号
+	 * @para: value 值
 	 * @author 盛录
-	 * @details 设置表格数据
+	 * @details 设置单元格数据
 	 */
-	void setGridData(const QJsonObject &data);
+	void setItem(const int &row, const int &col, const QVariant &value);
 
+
+	/**
+	 * @brief setIndexWidget
+	 * @para: row 行号
+	 * @para: col 列号
+	 * @para: widget 窗体部件
+	 * @author 盛录
+	 * @details 设置单元格部件
+	 */
+	void setIndexWidget(const int &row, const int &col, QWidget* widget);
+
+	/**
+	 * @brief clear
+	 * @author 盛录
+	 * @details 清空
+	 */
+	void clear();
+
+	/**
+	 * @brief count
+	 * @author 盛录
+	 * @details 返回行数和列数， row和col
+	 */
+	QMap<QString, int> count();
 private:
 	Ui::Widget_DataGrid_Pa *ui;
 	QStandardItemModel *model;

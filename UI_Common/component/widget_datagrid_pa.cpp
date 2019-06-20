@@ -19,40 +19,10 @@ Widget_DataGrid_Pa::~Widget_DataGrid_Pa()
 	delete ui;
 }
 
-QStandardItemModel* Widget_DataGrid_Pa::get_Model()
-{
-	return this->model;
-}
-
 void Widget_DataGrid_Pa::setHorizontalHeaderLabels(const QStringList &labels)
 {
 	this->labels = labels;
 	this->model->setHorizontalHeaderLabels(labels);
-}
-
-void Widget_DataGrid_Pa::setHorizontalHeaderLabels(const QStringList &labels, const QStringList &names)
-{
-	this->labels = labels;
-	this->names = names;
-	this->model->setHorizontalHeaderLabels(labels);
-}
-
-void Widget_DataGrid_Pa::setGridData(const QJsonObject &data)
-{
-	this->model->clear();
-	this->setHorizontalHeaderLabels(this->labels);
-	if (data.contains("rows"))
-	{
-		QJsonArray rows = data.value("rows").toArray();
-		for (int row_c = 0; row_c < rows.count(); row_c++)
-		{
-			QJsonObject row = rows.at(row_c).toObject();
-			for (int col_c = 0; col_c < this->names.count(); col_c++)
-			{
-				this->model->setItem(row_c, col_c, new QStandardItem(row[this->names[col_c]].toString()));
-			}
-		}
-	}
 }
 
 void Widget_DataGrid_Pa::init_Widget()
@@ -60,4 +30,27 @@ void Widget_DataGrid_Pa::init_Widget()
 	this->model = new QStandardItemModel(this);
 	ui->tableView_DataGrid->setModel(this->model);
 	//ui->tableView_DataGrid->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+}
+
+void Widget_DataGrid_Pa::setItem(const int &row, const int &col, const QVariant &value)
+{
+	this->model->setItem(row, col, new QStandardItem(value.toString()));
+}
+
+void Widget_DataGrid_Pa::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->tableView_DataGrid->setIndexWidget(this->model->index(row, col), widget);
+}
+
+void Widget_DataGrid_Pa::clear() 
+{
+	this->model->clear();
+}
+
+QMap<QString, int> Widget_DataGrid_Pa::count()
+{
+	QMap<QString, int> result;
+	result.insert("row", this->model->rowCount());
+	result.insert("col", this->model->columnCount());
+	return result;
 }

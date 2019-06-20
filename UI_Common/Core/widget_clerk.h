@@ -19,14 +19,49 @@ public:
 	~Widget_Clerk();
 
 protected:
-	//设置headerlabels
-	void setHorizontalHeaderLabels(const QStringList &header);
 
-	//设置headerlabels， 和ids
-	void setHorizontalHeaderLabels(const QStringList &header, const QStringList &names);
+	/**
+	* @brief setHorizontalHeaderLabels
+	* @para: labels 表头
+	* @author 盛录
+	* @details 设置表格头
+	*/
+	void setHorizontalHeaderLabels(const QStringList &labels);
 
-	// 更新表格数据
-	void setGridData(const QJsonObject &data);
+	/**
+	* @brief setItem
+	* @para: row 行号
+	* @para: col 列号
+	* @para: value 值
+	* @author 盛录
+	* @details 设置单元格数据
+	*/
+	void setItem(const int &row, const int &col, const QVariant &value);
+
+
+	/**
+	* @brief setIndexWidget
+	* @para: row 行号
+	* @para: col 列号
+	* @para: widget 窗体部件
+	* @author 盛录
+	* @details 设置单元格部件
+	*/
+	void setIndexWidget(const int &row, const int &col, QWidget* widget);
+
+	/**
+	* @brief clear
+	* @author 盛录
+	* @details 清空
+	*/
+	void clear();
+
+	/**
+	* @brief count
+	* @author 盛录
+	* @details 返回行数和列数， row和col
+	*/
+	QMap<QString, int> count();
 
 private:
 	Ui::Widget_Clerk *ui;
