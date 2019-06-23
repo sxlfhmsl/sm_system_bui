@@ -38,7 +38,32 @@ void Widget_UserPosition::init_DataGrid()
 {
 }
 
-void  Widget_UserPosition::setHorizontalHeaderLabels(QStringList header)
+void  Widget_UserPosition::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Widget_UserPosition::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Widget_UserPosition::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Widget_UserPosition::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Widget_UserPosition::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Widget_UserPosition::count()
+{
+	return ui->widget_DataGrid->count();
 }

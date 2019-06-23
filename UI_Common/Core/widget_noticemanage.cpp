@@ -38,7 +38,32 @@ void Widget_NoticeManage::init_DataGrid()
 {
 }
 
-void  Widget_NoticeManage::setHorizontalHeaderLabels(QStringList header)
+void  Widget_NoticeManage::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Widget_NoticeManage::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Widget_NoticeManage::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Widget_NoticeManage::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Widget_NoticeManage::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Widget_NoticeManage::count()
+{
+	return ui->widget_DataGrid->count();
 }

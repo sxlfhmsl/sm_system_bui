@@ -32,7 +32,32 @@ void Widget_FundsDetails::init_DataGrid()
 {
 }
 
-void  Widget_FundsDetails::setHorizontalHeaderLabels(QStringList header)
+void  Widget_FundsDetails::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Widget_FundsDetails::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Widget_FundsDetails::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Widget_FundsDetails::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Widget_FundsDetails::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Widget_FundsDetails::count()
+{
+	return ui->widget_DataGrid->count();
 }

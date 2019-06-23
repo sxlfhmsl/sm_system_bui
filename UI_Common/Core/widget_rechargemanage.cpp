@@ -32,7 +32,33 @@ void Widget_RechargeManage::init_DataGrid()
 {
 }
 
-void  Widget_RechargeManage::setHorizontalHeaderLabels(QStringList header)
+void  Widget_RechargeManage::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
 }
+
+void Widget_RechargeManage::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Widget_RechargeManage::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Widget_RechargeManage::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Widget_RechargeManage::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Widget_RechargeManage::count()
+{
+	return ui->widget_DataGrid->count();
+}
+

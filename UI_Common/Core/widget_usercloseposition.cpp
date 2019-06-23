@@ -38,7 +38,32 @@ void Widget_UserClosePosition::init_DataGrid()
 {
 }
 
-void  Widget_UserClosePosition::setHorizontalHeaderLabels(QStringList header)
+void  Widget_UserClosePosition::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Widget_UserClosePosition::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Widget_UserClosePosition::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Widget_UserClosePosition::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Widget_UserClosePosition::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Widget_UserClosePosition::count()
+{
+	return ui->widget_DataGrid->count();
 }
