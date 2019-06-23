@@ -30,7 +30,32 @@ void Admin_StockManage::init_DataGrid()
 	this->setHorizontalHeaderLabels(grid_head);
 }
 
-void  Admin_StockManage::setHorizontalHeaderLabels(QStringList header)
+void  Admin_StockManage::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Admin_StockManage::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Admin_StockManage::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Admin_StockManage::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Admin_StockManage::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Admin_StockManage::count()
+{
+	return ui->widget_DataGrid->count();
 }

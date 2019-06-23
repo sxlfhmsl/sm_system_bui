@@ -29,7 +29,32 @@ void Admint_AgentDrawMoney::init_DataGrid()
 	this->setHorizontalHeaderLabels(grid_head);
 }
 
-void  Admint_AgentDrawMoney::setHorizontalHeaderLabels(QStringList header)
+void  Admint_AgentDrawMoney::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Admint_AgentDrawMoney::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Admint_AgentDrawMoney::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Admint_AgentDrawMoney::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Admint_AgentDrawMoney::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Admint_AgentDrawMoney::count()
+{
+	return ui->widget_DataGrid->count();
 }

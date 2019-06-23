@@ -29,7 +29,32 @@ void Admin_LogManage::init_DataGrid()
 	this->setHorizontalHeaderLabels(grid_head);
 }
 
-void  Admin_LogManage::setHorizontalHeaderLabels(QStringList header)
+void  Admin_LogManage::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Admin_LogManage::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Admin_LogManage::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Admin_LogManage::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Admin_LogManage::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Admin_LogManage::count()
+{
+	return ui->widget_DataGrid->count();
 }

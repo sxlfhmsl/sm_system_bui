@@ -29,7 +29,32 @@ void Admin_MemberAccount::init_DataGrid()
 	this->setHorizontalHeaderLabels(grid_head);
 }
 
-void  Admin_MemberAccount::setHorizontalHeaderLabels(QStringList header)
+void  Admin_MemberAccount::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Admin_MemberAccount::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Admin_MemberAccount::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Admin_MemberAccount::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Admin_MemberAccount::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Admin_MemberAccount::count()
+{
+	return ui->widget_DataGrid->count();
 }
