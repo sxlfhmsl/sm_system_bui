@@ -29,7 +29,32 @@ void Agent_MemberInfo::init_DataGrid()
 	this->setHorizontalHeaderLabels(grid_head);
 }
 
-void  Agent_MemberInfo::setHorizontalHeaderLabels(QStringList header)
+void  Agent_MemberInfo::setHorizontalHeaderLabels(const QStringList &labels)
 {
-	ui->widget_DataGrid->setHorizontalHeaderLabels(header);
+	ui->widget_DataGrid->setHorizontalHeaderLabels(labels);
+}
+
+void Agent_MemberInfo::setItem(const int &row, const int &col, const QVariant &value)
+{
+	ui->widget_DataGrid->setItem(row, col, value);
+}
+
+void Agent_MemberInfo::setIndexWidget(const int &row, const int &col, QWidget* widget)
+{
+	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Agent_MemberInfo::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
+}
+
+void Agent_MemberInfo::clear()
+{
+	ui->widget_DataGrid->clear();
+}
+
+QMap<QString, int> Agent_MemberInfo::count()
+{
+	return ui->widget_DataGrid->count();
 }
