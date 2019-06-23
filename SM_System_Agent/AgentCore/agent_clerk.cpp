@@ -28,7 +28,7 @@ Agent_Clerk::~Agent_Clerk()
 {
 	if (this->reply_Update_Clerk != nullptr)
 	{
-		this->reply_Update_Clerk->deleteLater();
+		delete this->reply_Update_Clerk;
 	}
 }
 
@@ -45,7 +45,7 @@ void Agent_Clerk::slot_Finished_Update_Clerk()
 	{
 		QJsonObject result = this->reply_Update_Clerk->get_parse_json();
 		QObject::disconnect(this->reply_Update_Clerk, SIGNAL(finished()), this, SLOT(slot_Finished_Update_Clerk()));
-		this->reply_Update_Clerk->deleteLater();
+		delete this->reply_Update_Clerk;
 		this->reply_Update_Clerk = nullptr;
 		QJsonArray rows = result["data"].toObject()["rows"].toArray();
 		for (int i = 0; i < rows.count(); i++)
@@ -54,5 +54,18 @@ void Agent_Clerk::slot_Finished_Update_Clerk()
 			this->setIndexWidget(i, 1, new QPushButton("修改"));
 			this->setIndexWidget(i, 2, new QPushButton("删除"));
 		}
+		this->set_PaginationInfo(result["data"].toObject()["total"].toInt());
+	}
+}
+
+void Agent_Clerk::slot_pag_request(int page, int num)
+{
+	if (this->reply_Update_Clerk == nullptr)
+	{
+		QJsonObject params;
+		params.insert("page", page);
+		params.insert("pagesize", num);
+		this->reply_Update_Clerk = Agent_Http::instance()->post("/clerk", params);
+		QObject::connect(this->reply_Update_Clerk, SIGNAL(finished()), this, SLOT(slot_Finished_Update_Clerk()));
 	}
 }

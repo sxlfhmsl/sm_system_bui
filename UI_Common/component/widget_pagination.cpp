@@ -26,6 +26,8 @@ void Widget_Pagination::set_PaginationInfo(int counts)
 	}
 	// 更改总页数
 	ui->label_Pages->setText("/" + QString::number(pages, 10));
+	// 设置总条数
+	ui->label_Counts->setText(QString("共%1条").arg(this->counts));
 }
 
 int Widget_Pagination::get_CurrentPage()
@@ -53,20 +55,22 @@ void Widget_Pagination::init_Widget()
 void Widget_Pagination::on_pushButton_Small_clicked()
 {
 	this->currentPage -= 1;
-	if (this->currentPage < 0)
+	if (this->currentPage <= 0)
 	{
-		this->currentPage = 0;
+		this->currentPage = 1;
 	}
+	ui->lineEdit_CurrentPage->setText(QString::number(this->currentPage, 10));
 	emit page_Change(this->currentPage, this->count_Page[ui->comboBox_CountPage->currentIndex()]);
 }
 
 void Widget_Pagination::on_pushButton_SmallM_clicked()
 {
 	this->currentPage -= 10;
-	if (this->currentPage < 0)
+	if (this->currentPage <= 0)
 	{
-		this->currentPage = 0;
+		this->currentPage = 1;
 	}
+	ui->lineEdit_CurrentPage->setText(QString::number(this->currentPage, 10));
 	emit page_Change(this->currentPage, this->count_Page[ui->comboBox_CountPage->currentIndex()]);
 }
 
@@ -79,6 +83,11 @@ void Widget_Pagination::on_pushButton_Big_clicked()
 	{
 		this->currentPage = pages;
 	}
+	if (this->currentPage <= 0)
+	{
+		this->currentPage = 1;
+	}
+	ui->lineEdit_CurrentPage->setText(QString::number(this->currentPage, 10));
 	emit page_Change(this->currentPage, this->count_Page[ui->comboBox_CountPage->currentIndex()]);
 }
 
@@ -91,5 +100,27 @@ void Widget_Pagination::on_pushButton_BigM_clicked()
 	{
 		this->currentPage = pages;
 	}
+	if (this->currentPage <= 0)
+	{
+		this->currentPage = 1;
+	}
+	ui->lineEdit_CurrentPage->setText(QString::number(this->currentPage, 10));
 	emit page_Change(this->currentPage, this->count_Page[ui->comboBox_CountPage->currentIndex()]);
+}
+
+void Widget_Pagination::on_comboBox_CountPage_currentIndexChanged(int index)
+{
+	if (this->comboBox_Inited)
+	{
+		if (this->currentPage <= 0)
+		{
+			this->currentPage = 1;
+		}
+		ui->lineEdit_CurrentPage->setText(QString::number(this->currentPage, 10));
+		emit page_Change(this->currentPage, this->count_Page[index]);
+	}
+	else
+	{
+		this->comboBox_Inited = true;
+	}
 }

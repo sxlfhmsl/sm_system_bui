@@ -44,7 +44,9 @@ private:
 	// 每页显示多少条数据筛选
 	QList<int> count_Page;
 	// 当前页
-	int currentPage = 0;
+	int currentPage = 1;
+	// combo Box 初始化触发index改变
+	bool comboBox_Inited = false;
 
 private:
 	/**
@@ -67,4 +69,6 @@ private slots:
 	void on_pushButton_Big_clicked();
 	// 使得页数增大 10
 	void on_pushButton_BigM_clicked();
+	// 选择的每页多少条的index改变
+	void on_comboBox_CountPage_currentIndexChanged(int index);
 };

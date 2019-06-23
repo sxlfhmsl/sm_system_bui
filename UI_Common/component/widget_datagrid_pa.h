@@ -15,6 +15,10 @@ class UI_COMMON_EXPORT Widget_DataGrid_Pa : public QWidget
 {
 	Q_OBJECT
 
+signals :
+	// 分页信息发生变化 当前页， 每页条目数
+	void page_Change(int, int);
+
 public:
 	// labels：表头
 	QStringList labels;
@@ -50,6 +54,14 @@ public:
 	 * @details 设置单元格部件
 	 */
 	void setIndexWidget(const int &row, const int &col, QWidget* widget);
+
+	/**
+	* @brief set_PaginationInfo
+	* @author 盛录
+	* @para(counts):总数量
+	* @details 更改分页信息
+	*/
+	void set_PaginationInfo(int counts);
 
 	/**
 	 * @brief clear

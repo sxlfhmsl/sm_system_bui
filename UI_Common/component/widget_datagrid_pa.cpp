@@ -29,6 +29,8 @@ void Widget_DataGrid_Pa::init_Widget()
 {
 	this->model = new QStandardItemModel(this);
 	ui->tableView_DataGrid->setModel(this->model);
+	// 页面修改
+	QObject::connect(ui->widget_Pa, SIGNAL(page_Change(int, int)), this, SIGNAL(page_Change(int, int)));
 	//ui->tableView_DataGrid->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
 
@@ -40,6 +42,11 @@ void Widget_DataGrid_Pa::setItem(const int &row, const int &col, const QVariant 
 void Widget_DataGrid_Pa::setIndexWidget(const int &row, const int &col, QWidget* widget)
 {
 	ui->tableView_DataGrid->setIndexWidget(this->model->index(row, col), widget);
+}
+
+void Widget_DataGrid_Pa::set_PaginationInfo(int counts)
+{
+	ui->widget_Pa->set_PaginationInfo(counts);
 }
 
 void Widget_DataGrid_Pa::clear() 

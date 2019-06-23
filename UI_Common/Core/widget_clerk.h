@@ -57,11 +57,29 @@ protected:
 	void clear();
 
 	/**
+	* @brief set_PaginationInfo
+	* @author 盛录
+	* @para(counts):总数量
+	* @details 更改分页信息
+	*/
+	void set_PaginationInfo(int counts);
+
+	/**
 	* @brief count
 	* @author 盛录
 	* @details 返回行数和列数， row和col
 	*/
 	QMap<QString, int> count();
+
+protected slots:
+	/**
+	 * @brief slot_pag_request
+	 * @author 盛录
+	 * @para(page):页数
+	 * @para(num):每页的数量
+	 * @details 更改分页信息
+	 */
+    virtual void slot_pag_request(int page, int num) {};
 
 private:
 	Ui::Widget_Clerk *ui;

@@ -25,6 +25,7 @@ void Widget_Clerk::init_UI()
 	case Widget_Base::Agent:
 		break;
 	}
+	QObject::connect(ui->widget_DataGrid, SIGNAL(page_Change(int, int)), this, SLOT(slot_pag_request(int, int)));
 	this->init_DataGrid();
 }
 
@@ -45,6 +46,11 @@ void Widget_Clerk::setItem(const int &row, const int &col, const QVariant &value
 void Widget_Clerk::setIndexWidget(const int &row, const int &col, QWidget* widget)
 {
 	ui->widget_DataGrid->setIndexWidget(row, col, widget);
+}
+
+void Widget_Clerk::set_PaginationInfo(int counts)
+{
+	ui->widget_DataGrid->set_PaginationInfo(counts);
 }
 
 void Widget_Clerk::clear()
